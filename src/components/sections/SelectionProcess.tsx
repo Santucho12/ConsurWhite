@@ -68,7 +68,7 @@ export function SelectionProcess() {
 
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % steps.length);
-    }, 8000);
+    }, 6000);
     return () => clearInterval(interval);
   }, [isInView]);
 

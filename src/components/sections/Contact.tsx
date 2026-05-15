@@ -32,33 +32,29 @@ export function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-16 md:py-24 relative overflow-hidden bg-[#F4F6F8]">
+    <section id="contacto" className="py-12 md:py-16 relative overflow-hidden bg-[#F4F6F8]">
       {/* Background blobs */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-orange/5 rounded-full blur-[120px] -z-10" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-navy/5 rounded-full blur-[100px] -z-10" />
 
       <div className="container mx-auto px-6 md:px-12">
         {/* New Centered Header Style */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-10">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-0">
               CONTÁCTENOS
             </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Potenciemos su capital humano.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight tracking-tight">
+              Construyamos su próximo <br className="hidden md:block" /> gran equipo.
             </h2>
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <Reveal delay={0.3}>
-              <p className="text-navy/70 text-lg mb-12 leading-relaxed">
-                Estamos listos para ser su socio estratégico en la gestión de talentos. Contáctenos para una consulta personalizada.
-              </p>
-            </Reveal>
 
-            <div className="space-y-8">
+
+            <div className="space-y-6">
               {[
                 { icon: Phone, label: "Teléfono", value: "+54 291 456-7890", href: "tel:+542914567890" },
                 { icon: Mail, label: "Email", value: "contacto@consurwhite.com.ar", href: "mailto:contacto@consurwhite.com.ar" },
@@ -70,7 +66,7 @@ export function Contact() {
                       <item.icon size={24} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold text-orange uppercase tracking-widest mb-1">{item.label}</p>
+                      <p className="text-xs font-bold text-navy/50 uppercase tracking-widest mb-1">{item.label}</p>
                       <p className="text-lg font-bold text-navy">{item.value}</p>
                     </div>
                   </a>
@@ -87,7 +83,7 @@ export function Contact() {
                 <Reveal key={i} delay={0.7 + i * 0.1}>
                   <a
                     href={social.href}
-                    className="w-12 h-12 rounded-full border border-navy/10 flex items-center justify-center text-navy hover:bg-orange hover:border-orange hover:text-white transition-all duration-500"
+                    className="w-12 h-12 rounded-full border border-navy/10 flex items-center justify-center text-navy hover:bg-navy hover:border-navy hover:text-white transition-all duration-500"
                   >
                     <social.icon size={20} />
                   </a>
@@ -100,10 +96,10 @@ export function Contact() {
             <Reveal delay={0.3}>
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="glass p-10 md:p-12 rounded-[40px] shadow-deep border border-white"
+                className="glass p-8 md:p-10 rounded-[32px] shadow-deep border border-white"
               >
-                <div className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-navy/70 ml-2">Nombre Completo</label>
                       <input
@@ -137,7 +133,7 @@ export function Contact() {
                     <label className="text-sm font-bold text-navy/70 ml-2">¿Cómo podemos ayudar?</label>
                     <textarea
                       {...register("mensaje")}
-                      rows={5}
+                      rows={4}
                       className="w-full bg-white/50 border border-navy/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-orange/30 transition-all resize-none"
                       placeholder="Cuéntanos sobre tu necesidad de búsqueda o consultoría..."
                     />
@@ -146,7 +142,7 @@ export function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full bg-navy text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-orange transition-all duration-500 shadow-xl hover:shadow-orange/30"
+                    className="w-full bg-navy text-white font-bold py-4 rounded-2xl flex items-center justify-center gap-3 hover:bg-navy/90 transition-all duration-500 shadow-xl"
                   >
                     Enviar Mensaje
                     <Send size={18} />

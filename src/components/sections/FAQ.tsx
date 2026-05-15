@@ -15,6 +15,10 @@ const faqs = [
     answer: "Nuestra especialidad es ese sector porque conocemos el territorio y los perfiles. Sin embargo, también podemos acompañar empresas de otros rubros industriales o comerciales en Bahía Blanca y la región."
   },
   {
+    question: "¿Cuál es el costo del servicio?",
+    answer: "El costo varía según el tipo de búsqueda, la cantidad de posiciones y la complejidad del perfil. Contactanos y te preparamos una propuesta sin compromiso."
+  },
+  {
     question: "¿Qué pasa si el candidato no funciona?",
     answer: "Trabajamos con garantía. Si el candidato incorporado no supera el período de prueba acordado, realizamos una nueva búsqueda sin costo adicional. Los detalles se establecen en el contrato."
   },
@@ -32,7 +36,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-[#F4F6F8] overflow-hidden">
+    <section id="faq" className="pt-12 pb-16 md:pt-20 md:pb-24 bg-[#F4F6F8] overflow-hidden">
       <div className="container mx-auto px-6">
         
         {/* Header Section */}
@@ -69,10 +73,10 @@ export function FAQ() {
                       {faq.question}
                     </span>
                     
-                    <div className={`shrink-0 flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] ${
-                      isOpen ? "rotate-180 text-navy" : "text-navy/40"
+                    <div className={`shrink-0 w-8 h-8 rounded-full border border-navy/10 flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] ${
+                      isOpen ? "rotate-180 bg-navy text-white border-navy" : "bg-transparent text-navy/40"
                     }`}>
-                      <ChevronDown size={20} strokeWidth={2.5} />
+                      <ChevronDown size={16} strokeWidth={3} />
                     </div>
                   </button>
 

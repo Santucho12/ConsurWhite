@@ -18,37 +18,37 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
   {
-    title: "Análisis de Relevamientos",
-    desc: "Analizamos técnica y culturalmente el puesto en sus instalaciones para asegurar un match perfecto desde el primer día.",
+    title: "Análisis de Necesidades",
+    desc: "Visitamos sus instalaciones para entender a fondo la necesidad, la cultura de la planta y los requisitos técnicos del puesto.",
     icon: Briefcase,
     color: "navy",
     hex: "#001A33",
   },
   {
-    title: "Sourcing Territorial",
-    desc: "Activamos nuestra red estratégica en Ingeniero White para encontrar el talento local que otros no ven.",
+    title: "Activación de Búsqueda",
+    desc: "Ponemos en marcha nuestro riguroso proceso interno de selección y filtrado para dar con los perfiles más idóneos.",
     icon: Search,
     color: "navy",
     hex: "#001A33",
   },
   {
-    title: "Evaluación Técnica",
-    desc: "Evaluamos las habilidades operativas reales en el campo para validar la destreza técnica del candidato.",
-    icon: Filter,
-    color: "navy",
-    hex: "#001A33",
-  },
-  {
-    title: "Entrevista Psicotécnica",
-    desc: "Analizamos la conducta, responsabilidad y el manejo de la presión en entornos industriales exigentes.",
-    icon: Users,
-    color: "navy",
-    hex: "#001A33",
-  },
-  {
     title: "Presentación de Candidatos",
-    desc: "Le presentamos a los mejores perfiles seleccionados con informes detallados para que usted tome la decisión final.",
+    desc: "Le entregamos un informe ejecutivo detallado con los perfiles finalistas, listos para su evaluación.",
     icon: Users,
+    color: "navy",
+    hex: "#001A33",
+  },
+  {
+    title: "Entrevistas Finales",
+    desc: "Coordinamos las entrevistas entre los candidatos seleccionados y el equipo técnico o gerencial de su empresa.",
+    icon: FileCheck,
+    color: "orange",
+    hex: "#FF6B00",
+  },
+  {
+    title: "Elección de candidatos",
+    desc: "Usted toma la decisión final. Lo asesoramos en la elección y facilitamos toda la gestión para agilizar el ingreso.",
+    icon: CheckCircle2,
     color: "orange",
     hex: "#FF6B00",
   },
@@ -105,12 +105,12 @@ export function WorkWithCompanies() {
   });
 
   return (
-    <section id="alianza" className="py-20 md:py-28 overflow-hidden relative bg-[#F4F6F8]">
+    <section id="alianza" className="pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden relative bg-[#F4F6F8]">
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
 
         {/* New Centered Header Style */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-10">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-0">
               LOS PASOS A SEGUIR JUNTOS
@@ -148,7 +148,7 @@ export function WorkWithCompanies() {
               const stepColor = step.color === "navy" ? "text-navy" : "text-orange";
 
               return (
-                <div key={i} className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-0 min-h-[60px] py-4 md:py-6 group">
+                <div key={i} className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-0 min-h-[50px] py-2 md:py-3 group">
 
                   {/* Local Masks (Hides line above first circle and below last circle) */}
                   <div className="absolute left-6 md:left-1/2 top-0 bottom-0 -translate-x-1/2 pointer-events-none z-[15]">
@@ -168,7 +168,8 @@ export function WorkWithCompanies() {
                   {/* Content */}
                   <div className={`
                     pl-16 md:pl-0 
-                    ${isEven ? "md:pr-24 md:text-right md:col-start-1" : "md:pl-24 md:text-left md:col-start-2"}
+                    ${isEven ? "md:pr-24 md:col-start-1" : "md:pl-24 md:col-start-2"}
+                    text-left
                   `}>
                     <motion.div
                       initial={{ opacity: 0, x: isEven ? -50 : 50 }}
@@ -176,7 +177,7 @@ export function WorkWithCompanies() {
                       viewport={{ once: true, margin: "-50px" }}
                       transition={{ duration: 0.6 }}
                     >
-                      <div className={`flex items-center gap-2 mb-2 ${isEven ? "justify-end" : "justify-start"}`}>
+                      <div className={`flex items-center gap-2 mb-2 justify-start`}>
                         {isEven && <div className={`w-6 h-[2px] ${step.color === "navy" ? "bg-navy/10" : "bg-orange/20"}`} />}
                         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-navy/30">Paso {i + 1}</span>
                         {!isEven && <div className={`w-6 h-[2px] ${step.color === "navy" ? "bg-navy/10" : "bg-orange/20"}`} />}
@@ -184,7 +185,7 @@ export function WorkWithCompanies() {
                       <h3 className={`text-2xl md:text-3xl font-black mb-3 leading-tight transition-colors duration-500 ${stepColor}`}>
                         {step.title}
                       </h3>
-                      <p className="text-navy/60 text-base md:text-lg leading-relaxed max-w-md mx-auto md:mx-0">
+                      <p className="text-navy/60 text-base md:text-lg leading-relaxed max-w-md">
                         {step.desc}
                       </p>
                       {isLast && <CTABlock />}
@@ -203,15 +204,14 @@ export function WorkWithCompanies() {
 
 function CTABlock() {
   return (
-    <div className="mt-6 flex items-center gap-6">
+    <div className="mt-6 flex items-center">
       <a
         href="#contacto"
-        className="inline-flex items-center gap-3 bg-navy text-white font-bold text-[13px] uppercase tracking-[0.15em] px-8 py-4 rounded-xl hover:bg-orange transition-colors duration-500 group"
+        className="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold text-[12px] uppercase tracking-[0.15em] px-10 py-4 rounded-full transition-all duration-500 group hover:opacity-90 hover:shadow-xl shadow-lg"
       >
-        Contactar
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        Agendar reunión
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </a>
-      <span className="text-navy/30 text-sm hidden md:inline">Sin compromiso</span>
     </div>
   );
 }
