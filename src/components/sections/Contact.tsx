@@ -32,22 +32,28 @@ export function Contact() {
   };
 
   return (
-    <section id="contacto" className="py-32 relative overflow-hidden -cw-white">
+    <section id="contacto" className="py-16 md:py-24 relative overflow-hidden bg-[#F4F6F8]">
       {/* Background blobs */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] -cw-orange/5 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] -cw-blue/5 rounded-full blur-[100px] -z-10" />
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-orange/5 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-navy/5 rounded-full blur-[100px] -z-10" />
 
       <div className="container mx-auto px-6 md:px-12">
+        {/* New Centered Header Style */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <Reveal delay={0.2} width="100%">
+            <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-0">
+              CONTÁCTENOS
+            </span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
+              Potenciemos su capital humano.
+            </h2>
+          </Reveal>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
-            <Reveal delay={0.1}>
-              <span className="-cw-orange font-bold uppercase tracking-widest text-xs mb-4 block">Hablemos</span>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <h2 className="text-5xl font-bold -cw-blue mb-8">Potenciemos su <br />Capital Humano</h2>
-            </Reveal>
             <Reveal delay={0.3}>
-              <p className="-cw-blue/70 text-lg mb-12 leading-relaxed">
+              <p className="text-navy/70 text-lg mb-12 leading-relaxed">
                 Estamos listos para ser su socio estratégico en la gestión de talentos. Contáctenos para una consulta personalizada.
               </p>
             </Reveal>
@@ -60,12 +66,12 @@ export function Contact() {
               ].map((item, index) => (
                 <Reveal key={item.label} delay={0.4 + index * 0.1}>
                   <a href={item.href} className="flex items-center gap-6 group">
-                    <div className="w-14 h-14 rounded-2xl -cw-blue/5 flex items-center justify-center -cw-blue group-hover:-cw-blue group-hover:-cw-white transition-all duration-500">
+                    <div className="w-14 h-14 rounded-2xl bg-navy/5 flex items-center justify-center text-navy group-hover:bg-navy group-hover:text-white transition-all duration-500">
                       <item.icon size={24} />
                     </div>
                     <div>
-                      <p className="text-xs font-bold -cw-orange uppercase tracking-widest mb-1">{item.label}</p>
-                      <p className="text-lg font-bold -cw-blue">{item.value}</p>
+                      <p className="text-xs font-bold text-orange uppercase tracking-widest mb-1">{item.label}</p>
+                      <p className="text-lg font-bold text-navy">{item.value}</p>
                     </div>
                   </a>
                 </Reveal>
@@ -81,7 +87,7 @@ export function Contact() {
                 <Reveal key={i} delay={0.7 + i * 0.1}>
                   <a
                     href={social.href}
-                    className="w-12 h-12 rounded-full border -cw-blue/10 flex items-center justify-center -cw-blue hover:-cw-orange hover:-cw-orange hover:-cw-white transition-all duration-500"
+                    className="w-12 h-12 rounded-full border border-navy/10 flex items-center justify-center text-navy hover:bg-orange hover:border-orange hover:text-white transition-all duration-500"
                   >
                     <social.icon size={20} />
                   </a>
@@ -94,45 +100,45 @@ export function Contact() {
             <Reveal delay={0.3}>
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="glass p-10 md:p-12 rounded-[40px] shadow-deep border -cw-white"
+                className="glass p-10 md:p-12 rounded-[40px] shadow-deep border border-white"
               >
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-bold -cw-blue/70 ml-2">Nombre Completo</label>
+                      <label className="text-sm font-bold text-navy/70 ml-2">Nombre Completo</label>
                       <input
                         {...register("nombre")}
-                        className="w-full -cw-white/50 border -cw-blue/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:-cw-orange/30 transition-all"
+                        className="w-full bg-white/50 border border-navy/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-orange/30 transition-all"
                         placeholder="Juan Pérez"
                       />
                       {errors.nombre && <p className="text-red-500 text-xs ml-2">{errors.nombre.message}</p>}
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-bold -cw-blue/70 ml-2">Empresa</label>
+                      <label className="text-sm font-bold text-navy/70 ml-2">Empresa</label>
                       <input
                         {...register("empresa")}
-                        className="w-full -cw-white/50 border -cw-blue/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:-cw-orange/30 transition-all"
+                        className="w-full bg-white/50 border border-navy/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-orange/30 transition-all"
                         placeholder="Opcional"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold -cw-blue/70 ml-2">Email Corporativo</label>
+                    <label className="text-sm font-bold text-navy/70 ml-2">Email Corporativo</label>
                     <input
                       {...register("email")}
-                      className="w-full -cw-white/50 border -cw-blue/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:-cw-orange/30 transition-all"
+                      className="w-full bg-white/50 border border-navy/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-orange/30 transition-all"
                       placeholder="juan@empresa.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs ml-2">{errors.email.message}</p>}
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-bold -cw-blue/70 ml-2">¿Cómo podemos ayudar?</label>
+                    <label className="text-sm font-bold text-navy/70 ml-2">¿Cómo podemos ayudar?</label>
                     <textarea
                       {...register("mensaje")}
                       rows={5}
-                      className="w-full -cw-white/50 border -cw-blue/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:-cw-orange/30 transition-all resize-none"
+                      className="w-full bg-white/50 border border-navy/10 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-orange/30 transition-all resize-none"
                       placeholder="Cuéntanos sobre tu necesidad de búsqueda o consultoría..."
                     />
                     {errors.mensaje && <p className="text-red-500 text-xs ml-2">{errors.mensaje.message}</p>}
@@ -140,7 +146,7 @@ export function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full -cw-blue -cw-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 hover:-cw-orange transition-all duration-500 shadow-xl hover:-cw-orange/30"
+                    className="w-full bg-navy text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-orange transition-all duration-500 shadow-xl hover:shadow-orange/30"
                   >
                     Enviar Mensaje
                     <Send size={18} />

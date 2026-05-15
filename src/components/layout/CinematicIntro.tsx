@@ -49,17 +49,20 @@ export function CinematicIntro({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <AnimatePresence>
-        {introState !== 'done' && (
+      <AnimatePresence mode="wait">
+        {introState !== "done" && (
           <motion.div
             key="cinematic-overlay"
             className={cn(
-              "fixed inset-0 z-[100] flex items-center justify-center -cw-white/20",
-              introState === 'exiting' && "pointer-events-none"
+              "fixed inset-0 z-[9999] flex items-center justify-center bg-white/5",
+              introState === "exiting" && "pointer-events-none"
             )}
-            style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
+            style={{ 
+              backdropFilter: 'blur(20px)', 
+              WebkitBackdropFilter: 'blur(20px)' 
+            }}
             initial={{ opacity: 1 }}
-            animate={{ opacity: introState === 'exiting' ? 0 : 1 }}
+            animate={{ opacity: introState === "exiting" ? 0 : 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 3, ease: customEasing }}
           >

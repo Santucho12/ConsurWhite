@@ -109,15 +109,15 @@ export function Hero() {
         >
           <div className="max-w-3xl transform translate-y-8">
             <Reveal delay={0.1}>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-navy leading-[1.1] mb-8">
+              <h1 className="text-[48px] md:text-[78px] font-bold text-navy leading-[1.05] mb-8 tracking-tight">
                 Conectamos <br />
-                <span className="text-orange">Capital Humano</span> <br />
-                con Empresas.
+                <span>capital humano</span> <br />
+                con empresas.
               </h1>
             </Reveal>
 
             <Reveal delay={0.3}>
-              <h2 className="text-lg text-navy/70 font-medium max-w-xl mb-10 leading-relaxed">
+              <h2 className="text-lg text-slate-600 font-medium max-w-xl mb-10 leading-relaxed">
                 En ConsurWhite conectamos empresas del sector portuario y petroquímico de Ingeniero White con la mano de obra local calificada que necesitan. Rápido, confiable y con respaldo profesional.
               </h2>
             </Reveal>

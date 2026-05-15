@@ -2,16 +2,13 @@
 
 @theme {
   /* Tipografía definida */
-  --font-sans: var(--font-montserrat), "Montserrat", sans-serif;
+  --font-sans: var(--font-outfit), "Outfit", sans-serif;
 
   /* Los 5 colores solicitados */
-  --color-blanco: #ffffff;
+  --color-blanco: #F4F6F8;
   --color-gris-claro: #EEF3F7;
-  /* Gris suave de apoyo para fondos y cards */
-  --color-azul: #1A3A52;
-  /* Azul marino corporativo (navy) */
-  --color-naranja: #ff6b35;
-  /* Orange acento */
+  --color-azul: #0A2540;
+  --color-naranja: #E65A20;
   --color-negro: #000000;
 
   /* Alias para mantener compatibilidad con las clases ya usadas en el código */
@@ -50,4 +47,11 @@
 ::selection {
   background-color: var(--color-naranja);
   color: var(--color-blanco);
+}
+
+.cinematic-blur {
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  background-color: rgba(255, 255, 255, 0.05);
+  z-index: 9999;
 }

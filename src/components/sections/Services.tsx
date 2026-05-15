@@ -1,5 +1,5 @@
 "use client";
- 
+
 import { motion } from "framer-motion";
 import { Search, ClipboardCheck, Users, Handshake } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -26,7 +26,7 @@ const services = [
     items: [
       "Entrevistas por competencias",
       "Verificación de antecedentes",
-      "Evaluaciones de perfil",
+      "Evaluaciones psicolaborales",
       "Informes de adecuación"
     ],
     icon: ClipboardCheck,
@@ -35,12 +35,12 @@ const services = [
     num: "03",
     category: "CONSULTORÍA",
     title: "Consultoría en Capital Humano",
-    desc: "Asesoramos en la definición de perfiles y descripción de puestos. Si no sabés qué perfil necesitás, nosotros te ayudamos a definirlo.",
+    desc: "Acompañamos a las organizaciones en el diseño y definición estratégica de perfiles, asegurando que el talento se alinee con los objetivos del negocio.",
     items: [
-      "Definición de perfiles",
+      "Diseño de estructura",
       "Descripción de puestos",
-      "Estrategia de incorporación",
-      "Asesoramiento integral"
+      "Estrategia de compensaciones",
+      "Desarrollo organizacional"
     ],
     icon: Handshake,
   }
@@ -48,65 +48,63 @@ const services = [
 
 export function Services() {
   return (
-    <section id="servicios" className="pt-16 pb-32 bg-white relative overflow-hidden">
+    <section id="servicios" className="py-16 md:py-24 bg-[#F4F6F8] relative overflow-hidden">
       {/* Technical Dot Pattern Background */}
       <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(var(--color-azul) 0.5px, transparent 0.5px)', backgroundSize: '32px 32px' }} />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        {/* Perfectly Centered Header */}
-        <div className="max-w-[1800px] mx-auto text-center mb-20">
-          <Reveal delay={0.1} width="100%">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-[1px] w-8 bg-navy/20" />
-              <div className="w-1.5 h-1.5 rounded-full bg-navy/40" />
-              <div className="h-[1px] w-8 bg-navy/20" />
-            </div>
-            <h2 className="text-5xl md:text-6xl font-black text-navy leading-[1.1] tracking-tighter mb-8">
-              Nuestros Servicios <br /> Corporativos
+        {/* New Centered Header Style */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <Reveal delay={0.2} width="100%">
+            <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-0">
+              COMO TE AYUDAMOS
+            </span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
+              Nuestros servicios
             </h2>
           </Reveal>
         </div>
 
-        {/* Professional Itemized Grid - 3 Columns */}
-        <div className="max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        {/* Premium Editorial Layout - 3 Pillars */}
+        <div className="max-w-[1300px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {services.map((service, index) => (
             <Reveal key={service.title} delay={0.3 + index * 0.1} width="100%" className="h-full">
-              <div className="group h-full flex flex-col bg-white border-2 border-navy/5 rounded-[40px] transition-all duration-700 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.12)] hover:-translate-y-3 hover:border-navy relative overflow-hidden">
+              <div className="group h-full flex flex-col p-6 lg:p-8 border border-navy/15 rounded-3xl hover:border-navy hover:shadow-lg hover:-translate-y-1 transition-all duration-500 bg-transparent">
 
-                {/* Content Wrapper (with padding) */}
-                <div className="flex-1 flex flex-col items-start text-left px-10 py-12 pb-16">
-                  {/* Category Tag with Icon - Left Aligned */}
-                  <div className="mb-6 flex items-center justify-start">
-                    <div className="flex items-center gap-3 py-2 px-4 bg-white rounded-full border border-navy/10 shadow-sm">
-                      <service.icon className="w-4 h-4 text-navy" />
-                      <span className="text-[12px] font-bold text-black/50 tracking-widest uppercase">{service.category}</span>
-                    </div>
+                {/* Header: Badge and Icon */}
+                <div className="flex justify-between items-center mb-6">
+                  <div className="py-1 px-3 bg-[#F4F6F8] border border-navy/10 rounded-full group-hover:border-navy/30 transition-colors duration-500">
+                    <span className="text-[11px] font-bold text-navy/60 tracking-widest uppercase group-hover:text-navy transition-colors duration-500">
+                      {service.category}
+                    </span>
                   </div>
-
-                  {/* Title - Left Aligned */}
-                  <div className="min-h-[80px] flex items-start justify-start w-full">
-                    <h3 className="text-2xl md:text-3xl font-bold text-navy mb-3 tracking-tight leading-tight">
-                      {service.title}
-                    </h3>
+                  <div className="w-10 h-10 rounded-full border border-navy/10 flex items-center justify-center group-hover:bg-navy group-hover:border-navy transition-colors duration-500">
+                    <service.icon className="w-4 h-4 text-navy group-hover:text-[#F4F6F8] transition-colors duration-500" />
                   </div>
-
-                  {/* Description - Left text */}
-                  <div className="min-h-[80px] flex items-start w-full max-w-[350px] mb-8">
-                    <p className="text-navy/50 text-base leading-relaxed text-left w-full">
-                      {service.desc}
-                    </p>
-                  </div>
-
-                  {/* Sub-items List - Left Aligned */}
-                  <ul className="space-y-4 flex flex-col items-start w-full max-w-[320px]">
-                    {service.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 group/item text-left w-full">
-                        <div className="w-1.5 h-1.5 rounded-full bg-navy mt-2 transition-all group-hover/item:scale-150 shrink-0" />
-                        <span className="text-[15px] font-medium text-navy/70 group-hover/item:text-navy transition-colors">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-navy mb-4 tracking-tight leading-tight transition-colors duration-500">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-navy/60 text-[15px] md:text-base leading-snug mb-6">
+                  {service.desc}
+                </p>
+
+                {/* Items List */}
+                <ul className="space-y-3 mt-auto border-t border-navy/5 pt-5">
+                  {service.items.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 group/item cursor-pointer">
+                      <div className="w-1.5 h-1.5 rounded-full bg-navy mt-2 transition-all duration-300 group-hover/item:bg-orange group-hover/item:scale-150 shrink-0" />
+                      <span className="text-[14px] font-medium text-navy group-hover/item:text-orange transition-colors duration-300">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+
               </div>
             </Reveal>
           ))}
