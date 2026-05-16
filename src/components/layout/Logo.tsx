@@ -15,11 +15,11 @@ export function Logo({ className, variant = "full" }: LogoProps) {
       <Image
         src="/logo SOLO 512px 512px.svg"
         alt="ConsurWhite Icon"
-        width={100}
-        height={100}
+        width={120}
+        height={120}
         priority
         className={cn(
-          "object-contain w-auto h-16 md:h-20 -ml-3"
+          "object-contain w-auto h-12 md:h-16 -ml-2"
         )}
       />
       
@@ -28,11 +28,12 @@ export function Logo({ className, variant = "full" }: LogoProps) {
         <Image
           src="/CONSURWHITE_logo_4k.png"
           alt="ConsurWhite Logo"
-          width={600}
-          height={180}
+          width={400}
+          height={120}
           priority
+          quality={100}
           className={cn(
-            "object-contain w-auto h-12 md:h-16 -ml-2"
+            "object-contain w-auto h-8 md:h-12 -ml-1"
           )}
         />
       )}
