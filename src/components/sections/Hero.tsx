@@ -76,12 +76,12 @@ export function Hero() {
     <section
       ref={containerRef}
       id="inicio"
-      className="relative h-[125vh] w-full bg-navy"
+      className="relative h-[125vh] w-full bg-white md:bg-navy"
     >
       {/* Sticky wrapper */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Background Image Container */}
-        <div ref={imageRef} className="absolute top-0 left-0 z-0 h-[115%] w-full">
+        <div ref={imageRef} className="absolute top-0 left-0 z-0 h-[115%] w-full hidden md:block">
           <Image
             src="/ChatGPT Image 10 may 2026, 17_09_45.png"
             alt="ConsurWhite Portuario"
@@ -94,7 +94,7 @@ export function Hero() {
         {/* Base Gradient - Always visible to ensure text legibility */}
         <div
           ref={gradientRef}
-          className="absolute inset-0 z-10 bg-gradient-to-r from-white/80 from-10% via-white/40 via-40% to-transparent to-70%"
+          className="absolute inset-0 z-10 bg-white md:bg-gradient-to-r md:from-white/80 md:from-10% md:via-white/40 md:via-40% md:to-transparent md:to-70%"
         />
 
         {/* Darkening Overlay - Solid Black */}
@@ -142,7 +142,7 @@ export function Hero() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                    className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-md transition-shadow duration-500 cursor-pointer w-full sm:w-auto"
+                    className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-transparent md:bg-white/40 backdrop-blur-md border border-navy/20 md:border-white/60 shadow-sm hover:shadow-md transition-shadow duration-500 cursor-pointer w-full sm:w-auto"
                   >
                     Conocer ConsurWhite
                   </motion.button>

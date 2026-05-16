@@ -106,12 +106,12 @@ export function Navbar() {
               </motion.div>
             </div>
 
-            {/* Mobile Menu Toggle */}
+              {/* Mobile Menu Toggle */}
             <button
               className="md:hidden text-navy"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              <Menu size={28} />
             </button>
           </div>
         </div>
@@ -124,7 +124,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-6 right-6 mt-4 p-8 glass rounded-3xl md:hidden shadow-deep"
+            className="absolute top-full left-6 right-6 mt-4 p-8 bg-white rounded-3xl md:hidden shadow-2xl border border-navy/5 z-[110]"
           >
             <nav className="flex flex-col gap-6 items-center">
               {navLinks.map((link) => (
@@ -137,13 +137,27 @@ export function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="#contacto"
-                onClick={(e) => handleNavClick(e, "#contacto")}
-                className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] shadow-xl cursor-pointer"
-              >
-                Contacto
-              </a>
+              <div className="w-full border-t border-navy/10 pt-6 pb-2 mt-2 flex flex-col items-center gap-4">
+                <span className="text-[10px] font-bold text-navy/50 uppercase tracking-[0.2em]">Empresas</span>
+                <a
+                  href="#contacto"
+                  onClick={(e) => handleNavClick(e, "#contacto")}
+                  className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] shadow-xl cursor-pointer hover:bg-navy/90 transition-colors"
+                >
+                  Contacto
+                </a>
+              </div>
+
+              <div className="w-full border-t border-navy/10 pt-6 flex flex-col items-center gap-4">
+                <span className="text-[10px] font-bold text-navy/50 uppercase tracking-[0.2em]">Únete al equipo</span>
+                <Link
+                  href="/postulate"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full text-center bg-transparent border border-navy/30 text-navy px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] cursor-pointer hover:bg-navy/5 transition-colors"
+                >
+                  Postularme
+                </Link>
+              </div>
             </nav>
           </motion.div>
         )}

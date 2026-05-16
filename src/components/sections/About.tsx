@@ -130,42 +130,42 @@ export function About() {
         {/* Stats Badges Full Width */}
         <div className="mt-2 sm:mt-4 w-full">
           <Reveal delay={0.7} width="100%">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 border-t border-navy/10 pt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 border-t border-navy/10 pt-6">
               {/* Badge 1 */}
-              <div className="flex flex-col items-center p-8 rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
-                <div className="w-14 h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Users className="w-7 h-7" />
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
-                <div className="text-5xl font-black text-navy leading-none mb-2 tracking-tight flex items-center">
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={10} />
                 </div>
-                <div className="text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
+                <div className="text-[11px] md:text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
                   Clientes<br/>satisfechos
                 </div>
               </div>
 
               {/* Badge 2 */}
-              <div className="flex flex-col items-center p-8 rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
-                <div className="w-14 h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <CheckCircle className="w-7 h-7" />
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
-                <div className="text-5xl font-black text-navy leading-none mb-2 tracking-tight flex items-center">
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={18} />
                 </div>
-                <div className="text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
+                <div className="text-[11px] md:text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
                   Proyectos<br/>completados
                 </div>
               </div>
 
               {/* Badge 3 */}
-              <div className="flex flex-col items-center p-8 rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
-                <div className="w-14 h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Timer className="w-7 h-7" />
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Timer className="w-6 h-6 md:w-7 md:h-7" />
                 </div>
-                <div className="text-5xl font-black text-navy leading-none mb-2 tracking-tight flex items-center">
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={3000} />
                 </div>
-                <div className="text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
+                <div className="text-[11px] md:text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
                   Horas de<br/>acompañamiento
                 </div>
               </div>
