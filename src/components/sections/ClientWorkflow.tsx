@@ -206,7 +206,7 @@ function CTABlock() {
   return (
     <div className="mt-6 flex items-center">
       <a
-        href="#contacto"
+        href="/#contacto"
         className="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold text-[12px] uppercase tracking-[0.15em] px-10 py-4 rounded-full transition-all duration-500 group hover:opacity-90 hover:shadow-xl shadow-lg"
       >
         Agendar reunión

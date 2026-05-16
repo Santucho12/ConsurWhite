@@ -125,7 +125,7 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Reveal delay={0.5}>
-                <Link href="#alianza">
+                <Link href="#contacto">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -137,7 +137,7 @@ export function Hero() {
                 </Link>
               </Reveal>
               <Reveal delay={0.6}>
-                <Link href="#servicios">
+                <Link href="#nosotros">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}

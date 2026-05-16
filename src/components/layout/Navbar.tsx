@@ -3,22 +3,48 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Send } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { FadeIn } from "@/components/ui/Reveal";
+import { useLenis } from "lenis/react";
+import { usePathname, useRouter } from "next/navigation";
 
 const navLinks = [
-  { name: "Inicio", href: "/#inicio" },
-  { name: "Sobre nosotros", href: "/#nosotros" },
-  { name: "Servicios", href: "/#servicios" },
-  { name: "Proceso de Selección", href: "/#proceso-seleccion" },
-  { name: "Cómo trabajamos", href: "/#alianza" },
+  { name: "Inicio", href: "#inicio" },
+  { name: "Sobre nosotros", href: "#nosotros" },
+  { name: "Servicios", href: "#servicios" },
+  { name: "Proceso de Selección", href: "#proceso-seleccion" },
+  { name: "Cómo trabajamos", href: "#alianza" },
 ];
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const lenis = useLenis();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    // Close mobile menu
+    setIsMobileMenuOpen(false);
+
+    if (pathname !== '/') {
+      // If not on home page, navigate to home with the hash
+      router.push(`/${href}`);
+      return;
+    }
+
+    // If on home page, use Lenis for smooth scroll
+    if (lenis) {
+      lenis.scrollTo(href, {
+        duration: 4.5,
+        easing: (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t), // Very smooth easing
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,17 +72,17 @@ export function Navbar() {
               <Logo />
             </Link>
 
-            {/* Desktop Nav - Centered Links */}
             <nav className="hidden lg:flex flex-1 items-center justify-center gap-8 xl:gap-10">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
-                  className="relative text-[12px] font-bold text-navy group py-1 transition-colors uppercase tracking-[0.14em]"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="relative text-[12px] font-bold text-navy group py-1 transition-colors uppercase tracking-[0.14em] cursor-pointer"
                 >
                   <span>{link.name}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-navy transition-all duration-500 ease-out group-hover:w-full" />
-                </Link>
+                </a>
               ))}
             </nav>
 
@@ -67,15 +93,16 @@ export function Navbar() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
-                <Link
+                <a
                   href="#contacto"
+                  onClick={(e) => handleNavClick(e, "#contacto")}
                   className={cn(
-                    "group inline-flex items-center justify-center bg-navy text-white rounded-full font-bold uppercase px-8 py-3 text-[12px] tracking-[0.15em]",
+                    "group inline-flex items-center justify-center bg-navy text-white rounded-full font-bold uppercase px-8 py-3 text-[12px] tracking-[0.15em] cursor-pointer",
                     isScrolled ? "shadow-md" : "shadow-[0_0_20px_rgba(26,58,82,0.2)]"
                   )}
                 >
                   Contacto
-                </Link>
+                </a>
               </motion.div>
             </div>
 
@@ -101,22 +128,22 @@ export function Navbar() {
           >
             <nav className="flex flex-col gap-6 items-center">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold text-navy transition-colors uppercase tracking-[0.15em]"
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-lg font-bold text-navy transition-colors uppercase tracking-[0.15em] cursor-pointer"
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
-              <Link
+              <a
                 href="#contacto"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] shadow-xl"
+                onClick={(e) => handleNavClick(e, "#contacto")}
+                className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] shadow-xl cursor-pointer"
               >
                 Contacto
-              </Link>
+              </a>
             </nav>
           </motion.div>
         )}
