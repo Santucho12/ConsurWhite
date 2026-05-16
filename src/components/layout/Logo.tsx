@@ -11,32 +11,18 @@ export function Logo({ className, variant = "full" }: LogoProps) {
   
   return (
     <div className={cn("relative group flex items-center gap-0", className)}>
-      {/* Icon SVG */}
+      {/* Main Logo Text/Image - PNG includes the icon based on user screenshots */}
       <Image
-        src="/logo SOLO 512px 512px.svg"
-        alt="ConsurWhite Icon"
-        width={120}
+        src="/CONSURWHITE_logo_4k.png"
+        alt="ConsurWhite Logo"
+        width={400}
         height={120}
         priority
+        quality={100}
         className={cn(
-          "object-contain w-auto h-12 md:h-16 -ml-2"
+          "object-contain w-auto h-10 md:h-14 mix-blend-multiply"
         )}
       />
-      
-      {/* Main Logo Text/Image */}
-      {!isIcon && (
-        <Image
-          src="/CONSURWHITE_logo_4k.png"
-          alt="ConsurWhite Logo"
-          width={400}
-          height={120}
-          priority
-          quality={100}
-          className={cn(
-            "object-contain w-auto h-8 md:h-12 -ml-1"
-          )}
-        />
-      )}
     </div>
   );
 }
