@@ -94,7 +94,7 @@ export function Hero() {
         {/* Base Gradient - Always visible to ensure text legibility */}
         <div
           ref={gradientRef}
-          className="absolute inset-0 z-10 bg-white md:bg-gradient-to-r md:from-white/80 md:from-10% md:via-white/40 md:via-40% md:to-transparent md:to-70%"
+          className="absolute inset-0 z-10 bg-white md:bg-transparent md:bg-gradient-to-r md:from-white/85 md:from-10% md:via-white/45 md:via-30% md:to-transparent md:to-55%"
         />
 
         {/* Darkening Overlay - Solid Black */}
@@ -142,7 +142,7 @@ export function Hero() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                    className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-transparent md:bg-white/40 backdrop-blur-md border border-navy/20 md:border-white/60 shadow-sm hover:shadow-md transition-shadow duration-500 cursor-pointer w-full sm:w-auto"
+                    className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-transparent md:bg-white/50 backdrop-blur-md border border-navy/20 md:border-navy/10 shadow-sm hover:shadow-md md:hover:bg-white/70 transition-all duration-500 cursor-pointer w-full sm:w-auto"
                   >
                     Conocer ConsurWhite
                   </motion.button>

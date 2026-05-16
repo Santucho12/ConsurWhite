@@ -77,7 +77,7 @@ export function SelectionProcess() {
       <div className="container mx-auto px-6 md:px-12">
 
         {/* New Centered Header Style */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-8 md:mb-16">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-0">
               COMO ELEGIMOS EL CAPITAL HUMANO
@@ -88,8 +88,22 @@ export function SelectionProcess() {
           </Reveal>
         </div>
 
-        {/* Tab Navigator */}
-        <div className="relative mb-6">
+        {/* Mobile Step Indicator (Dots) */}
+        <div className="flex justify-center items-center gap-2 mb-8 md:hidden">
+          {steps.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`h-1.5 rounded-full transition-all duration-500 ease-out ${
+                active === i ? "w-8 bg-orange" : "w-1.5 bg-navy/20 hover:bg-navy/40"
+              }`}
+              aria-label={`Ir al paso ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Tab Navigator (Desktop) */}
+        <div className="relative mb-6 hidden md:block">
           {/* Background line */}
           <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-navy/10" />
           {/* Active line */}
@@ -131,7 +145,7 @@ export function SelectionProcess() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-5"
           >
             {/* Left — Main Card */}
-            <div className="lg:col-span-7 bg-white rounded-2xl p-5 md:p-8 shadow-sm border border-navy/5 flex flex-col justify-between min-h-[380px]">
+            <div className="lg:col-span-7 bg-white rounded-2xl p-5 md:p-8 shadow-sm border border-navy/5 flex flex-col justify-between min-h-[300px] md:min-h-[380px]">
               <div>
 
 

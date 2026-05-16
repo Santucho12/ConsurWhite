@@ -148,7 +148,7 @@ export function WorkWithCompanies() {
               const stepColor = step.color === "navy" ? "text-navy" : "text-orange";
 
               return (
-                <div key={i} className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-0 min-h-[50px] py-2 md:py-3 group">
+                <div key={i} className="relative grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-0 min-h-[50px] py-8 md:py-6 group">
 
                   {/* Local Masks (Hides line above first circle and below last circle) */}
                   <div className="absolute left-6 md:left-1/2 top-0 bottom-0 -translate-x-1/2 pointer-events-none z-[15]">
@@ -161,7 +161,7 @@ export function WorkWithCompanies() {
                   </div>
 
                   {/* Central Node */}
-                  <div className="absolute left-6 md:left-1/2 top-0 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2 z-20">
+                  <div className="absolute left-6 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
                     <TimelineNode index={i} scrollYProgress={scrollYProgress} isLast={isLast} hex={step.hex} />
                   </div>
 
@@ -172,9 +172,9 @@ export function WorkWithCompanies() {
                     text-left
                   `}>
                     <motion.div
-                      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, margin: "-50px" }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-10%" }}
                       transition={{ duration: 0.6 }}
                     >
                       <div className={`flex items-center gap-2 mb-2 justify-start`}>

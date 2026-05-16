@@ -10,12 +10,12 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white pt-16 pb-8 text-navy relative overflow-hidden border-t border-navy/5 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+    <footer className="bg-white pt-10 lg:pt-16 pb-8 text-navy relative overflow-hidden border-t border-navy/5 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
       {/* Decorative background element */}
       <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-navy/[0.01] rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mb-8 lg:mb-12">
           
           {/* Brand Column */}
           <div className="flex flex-col items-center lg:items-center text-center">
@@ -78,7 +78,7 @@ export function Footer() {
           {/* Quick Links Column */}
           <div className="flex flex-col items-center text-center">
             <div className="w-full">
-              <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-6 flex justify-center items-center gap-2">
+              <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-4 lg:mb-6 flex justify-center items-center gap-2">
                 Navegación
               </h4>
               <ul className="space-y-3">
@@ -104,10 +104,10 @@ export function Footer() {
 
           {/* Contact Info Column */}
           <div className="flex flex-col items-center text-center lg:items-center">
-            <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-8 flex items-center justify-center gap-2">
+            <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-4 lg:mb-8 flex items-center justify-center gap-2">
               Contacto Directo
             </h4>
-            <div className="space-y-6">
+            <div className="space-y-4 lg:space-y-6">
               {[
                 { icon: MapPin, label: "Ubicación", value: "Ingeniero White, Bahía Blanca" },
                 { icon: Phone, label: "Teléfono", value: "+54 291 1234567" },
@@ -132,8 +132,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-navy/5 flex flex-col md:flex-row justify-center items-center gap-6">
-          <div className="flex items-center gap-6">
+        <div className="pt-6 border-t border-navy/5 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center">
             <p className="text-navy/30 text-[11px] font-medium tracking-wide">
               © {currentYear} CONSURWHITE S.R.L.
             </p>
