@@ -79,7 +79,7 @@ export function SelectionProcess() {
         {/* New Centered Header Style */}
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
               COMO ELEGIMOS EL CAPITAL HUMANO
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
@@ -142,15 +142,15 @@ export function SelectionProcess() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-5 cursor-grab active:cursor-grabbing"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-5"
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
             dragElastic={0.2}
             onDragEnd={(e, { offset, velocity }) => {
-              const swipe = Math.abs(offset.x) * velocity.x;
-              if (swipe < -10000) {
+              const swipePower = Math.abs(offset.x) * velocity.x;
+              if (offset.x < -50 || swipePower < -5000) {
                 setActive((prev) => Math.min(steps.length - 1, prev + 1));
-              } else if (swipe > 10000) {
+              } else if (offset.x > 50 || swipePower > 5000) {
                 setActive((prev) => Math.max(0, prev - 1));
               }
             }}

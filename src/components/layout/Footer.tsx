@@ -78,10 +78,10 @@ export function Footer() {
           {/* Quick Links Column */}
           <div className="hidden md:flex flex-col items-center text-center">
             <div className="w-full">
-              <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-4 lg:mb-6 flex justify-center items-center gap-2">
+              <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-6 flex justify-center items-center gap-2">
                 Navegación
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
                   { name: "Inicio", href: "/#inicio" },
                   { name: "Sobre Nosotros", href: "/#nosotros" },
@@ -104,10 +104,10 @@ export function Footer() {
 
           {/* Contact Info Column */}
           <div className="flex flex-col items-center text-center lg:items-center">
-            <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-4 lg:mb-8 flex items-center justify-center gap-2">
+            <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-6 flex items-center justify-center gap-2">
               Contacto Directo
             </h4>
-            <div className="space-y-4 lg:space-y-6">
+            <div className="space-y-4">
               {[
                 { icon: MapPin, label: "Ubicación", value: "Ingeniero White, Bahía Blanca" },
                 { icon: Phone, label: "Teléfono", value: "+54 291 1234567" },

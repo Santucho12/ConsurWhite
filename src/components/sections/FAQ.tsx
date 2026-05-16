@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
@@ -33,7 +33,13 @@ const faqs = [
 ];
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setOpenIndex(0);
+    }
+  }, []);
 
   return (
     <section id="faq" className="pt-12 pb-16 md:pt-20 md:pb-24 bg-[#F4F6F8] overflow-hidden">
@@ -42,7 +48,7 @@ export function FAQ() {
         {/* Header Section */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
               LO QUE NECESITAS SABER
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">

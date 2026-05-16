@@ -112,7 +112,7 @@ export function WorkWithCompanies() {
         {/* New Centered Header Style */}
         <div className="max-w-4xl mx-auto text-center mb-10">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
               LOS PASOS A SEGUIR JUNTOS
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">

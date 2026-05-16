@@ -13,7 +13,7 @@ export function WhatsAppButton() {
       <motion.div
         initial={{ opacity: 0, x: 20, scale: 0.8 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ delay: 4.5, duration: 0.8, ease: "easeOut" }}
+        transition={{ delay: 5.5, duration: 0.8, ease: "easeOut" }}
         className="bg-[#F4F6F8] px-4 py-2 rounded-xl shadow-2xl border border-navy/5 text-navy text-[13px] font-bold flex items-center gap-2 whitespace-nowrap mb-2"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
@@ -27,7 +27,7 @@ export function WhatsAppButton() {
         className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.4)] transition-transform duration-300 hover:scale-105 active:scale-95 focus:outline-none"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 4 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 5 }}
         aria-label="Contactar por WhatsApp"
       >
         {/* Gentle pulsing ring (titilar) */}
