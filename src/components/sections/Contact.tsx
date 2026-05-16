@@ -71,7 +71,7 @@ export function Contact() {
         {/* Centered Header */}
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
           <Reveal delay={0.1} width="100%">
-            <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-3">
+            <span className="block text-orange font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase mb-3">
               CONTACTANOS
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">

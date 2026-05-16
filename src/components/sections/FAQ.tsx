@@ -42,7 +42,7 @@ export function FAQ() {
         {/* Header Section */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[11px] md:text-xs tracking-[0.2em] uppercase mb-0">
               LO QUE NECESITAS SABER
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">

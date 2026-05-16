@@ -100,7 +100,7 @@ export function Hero() {
         {/* Darkening Overlay - Solid Black */}
         <div
           ref={overlayRef}
-          className="absolute inset-0 z-15 bg-black opacity-0 pointer-events-none"
+          className="absolute inset-0 z-[15] bg-black opacity-0 pointer-events-none hidden md:block"
         />
 
         {/* Content */}

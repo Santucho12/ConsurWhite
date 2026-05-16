@@ -76,7 +76,7 @@ export function Footer() {
           </div>
 
           {/* Quick Links Column */}
-          <div className="flex flex-col items-center text-center">
+          <div className="hidden md:flex flex-col items-center text-center">
             <div className="w-full">
               <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[10px] mb-4 lg:mb-6 flex justify-center items-center gap-2">
                 Navegación
