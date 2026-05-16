@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/ui/Reveal";
+import { Send } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,9 +92,9 @@ export function Hero() {
         </div>
 
         {/* Base Gradient - Always visible to ensure text legibility */}
-        <div 
+        <div
           ref={gradientRef}
-          className="absolute inset-0 z-10 bg-gradient-to-r from-white/80 from-10% via-white/40 via-40% to-transparent to-70%" 
+          className="absolute inset-0 z-10 bg-gradient-to-r from-white/80 from-10% via-white/40 via-40% to-transparent to-70%"
         />
 
         {/* Darkening Overlay - Solid Black */}

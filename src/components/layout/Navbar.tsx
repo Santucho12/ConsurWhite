@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { FadeIn } from "@/components/ui/Reveal";
@@ -36,10 +36,10 @@ export function Navbar() {
         <div className="flex justify-center w-full px-4 md:px-0">
           <div
             className={cn(
-              "w-full max-w-7xl transition-all duration-[650ms] overflow-visible flex items-center justify-between h-20 px-8 md:px-12 rounded-full",
+              "w-full transition-all duration-[650ms] overflow-visible flex items-center justify-between h-20 px-8 md:px-12 rounded-full",
               isScrolled 
-                ? "bg-white/40 backdrop-blur-md border border-white/60 shadow-xl" 
-                : "bg-transparent border-transparent"
+                ? "max-w-7xl bg-white/40 backdrop-blur-md border border-white/60 shadow-xl" 
+                : "max-w-[94rem] bg-transparent border-transparent"
             )}
           >
             <Link href="/" className="hover:opacity-90 transition-opacity shrink-0">
@@ -70,7 +70,7 @@ export function Navbar() {
                 <Link
                   href="#contacto"
                   className={cn(
-                    "inline-flex items-center justify-center bg-navy text-white rounded-full font-bold uppercase px-8 py-3 text-[12px] tracking-[0.15em]",
+                    "group inline-flex items-center justify-center bg-navy text-white rounded-full font-bold uppercase px-8 py-3 text-[12px] tracking-[0.15em]",
                     isScrolled ? "shadow-md" : "shadow-[0_0_20px_rgba(26,58,82,0.2)]"
                   )}
                 >

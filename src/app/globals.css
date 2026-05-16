@@ -37,6 +37,12 @@
   h6 {
     color: var(--color-azul);
   }
+
+  button, 
+  [role="button"],
+  a {
+    cursor: pointer;
+  }
 }
 
 /* Base resets & utilities */

@@ -9,7 +9,7 @@ import {
   FileCheck,
   Handshake,
   Check,
-  ArrowRight,
+  Send,
   Briefcase,
   ShieldCheck,
   CheckCircle2
@@ -210,7 +210,7 @@ function CTABlock() {
         className="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold text-[12px] uppercase tracking-[0.15em] px-10 py-4 rounded-full transition-all duration-500 group hover:opacity-90 hover:shadow-xl shadow-lg"
       >
         Agendar reunión
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
   );
