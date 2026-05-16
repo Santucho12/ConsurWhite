@@ -25,11 +25,14 @@ export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
+  if (pathname === '/postulate') return null;
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
-    // Close mobile menu
+    // Close mobile menu and immediately unlock scroll
     setIsMobileMenuOpen(false);
+    document.body.style.overflow = "unset";
 
     if (pathname !== '/') {
       // If not on home page, navigate to home with the hash
@@ -38,12 +41,20 @@ export function Navbar() {
     }
 
     // If on home page, use Lenis for smooth scroll
-    if (lenis) {
-      lenis.scrollTo(href, {
-        duration: 4.5,
-        easing: (t) => t === 1 ? 1 : 1 - Math.pow(2, -10 * t), // Very smooth easing
-      });
-    }
+    setTimeout(() => {
+      if (lenis) {
+        lenis.scrollTo(href, {
+          duration: 2.5, // Reduced from 4.5 so it's not agonizingly slow, but still very smooth
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        });
+      } else {
+        const el = document.querySelector(href);
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }
+    }, 100); // Wait for menu exit animation to start
   };
 
   useEffect(() => {
