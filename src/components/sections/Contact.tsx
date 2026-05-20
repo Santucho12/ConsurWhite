@@ -6,12 +6,11 @@ import * as z from "zod";
 import { Send, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { useState } from "react";
-import Link from "next/link";
 
 const contactSchema = z.object({
   nombre: z.string().min(2, "El nombre es requerido"),
-  empresa: z.string().min(2, "El nombre de la empresa es requerido"),
-  email: z.string().email("Email corporativo inválido"),
+  empresa: z.string().optional(),
+  email: z.string().email("Email inválido"),
   mensaje: z.string().min(10, "El mensaje debe tener al menos 10 caracteres"),
 });
 
@@ -72,16 +71,12 @@ export function Contact() {
         {/* Centered Header */}
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
           <Reveal delay={0.1} width="100%">
-            <span className="inline-block bg-orange/10 text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase px-4 py-1.5 rounded-full mb-4 border border-orange/20">
-              EXCLUSIVO PARA EMPRESAS
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-3">
+              CONTACTANOS
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-navy leading-tight tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
               Construyamos tu próximo gran equipo.
             </h2>
-            <p className="text-navy/60 text-[0.875rem] md:text-[1rem] max-w-2xl mx-auto font-medium leading-relaxed">
-              Este formulario es únicamente para empresas interesadas en contratar personal técnico u operativo. 
-              Si buscás trabajo y querés enviarnos tu CV, por favor hacé clic en <Link href="/postulate" className="text-orange hover:underline font-bold">Postularme</Link> para cargar tus datos.
-            </p>
           </Reveal>
         </div>
 
@@ -103,9 +98,8 @@ export function Contact() {
                   <input
                     {...register("empresa")}
                     className="w-full bg-transparent border-b-2 border-navy/20 py-3 text-[1rem] font-medium text-navy focus:outline-none focus:border-navy transition-colors placeholder:text-navy/30"
-                    placeholder="Ej. Nombre de tu empresa"
+                    placeholder="Opcional"
                   />
-                  {errors.empresa && <p className="text-navy/60 text-xs mt-1 font-medium">{errors.empresa.message}</p>}
                 </div>
               </div>
 
