@@ -33,7 +33,7 @@ export function Logo({ className, variant = "full" }: LogoProps) {
           priority
           quality={100}
           className={cn(
-            "object-contain w-auto h-8 md:h-12 -ml-2 mix-blend-multiply"
+            "object-contain w-auto h-8 md:h-12 md:-ml-2 mix-blend-multiply"
           )}
         />
       )}
