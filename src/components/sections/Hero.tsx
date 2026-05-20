@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/ui/Reveal";
 import { Send } from "lucide-react";
+import { useLenis } from "lenis/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,24 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const gradientRef = useRef<HTMLDivElement>(null);
+
+  const lenis = useLenis();
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (lenis) {
+      lenis.scrollTo(href, {
+        duration: 2.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -125,7 +144,7 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Reveal delay={0.5}>
-                <Link href="#contacto">
+                <Link href="#contacto" onClick={(e) => handleSmoothScroll(e, '#contacto')}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
@@ -137,7 +156,7 @@ export function Hero() {
                 </Link>
               </Reveal>
               <Reveal delay={0.6}>
-                <Link href="#nosotros">
+                <Link href="#nosotros" onClick={(e) => handleSmoothScroll(e, '#nosotros')}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
