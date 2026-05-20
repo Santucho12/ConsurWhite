@@ -38,11 +38,6 @@ export function JoinUs() {
         </Reveal>
         <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-16">
           <div className="w-full lg:w-1/2 mt-4 md:mt-0">
-            <Reveal delay={0.1}>
-              <span className="inline-block text-navy/40 font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-2 md:mb-0">
-                Trabajá con nosotros
-              </span>
-            </Reveal>
             <Reveal delay={0.2}>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-navy mb-5 md:mb-8 italic leading-[1.1]">
                 Impulsá tu carrera <br /> con <span className="not-italic">ConsurWhite</span>
