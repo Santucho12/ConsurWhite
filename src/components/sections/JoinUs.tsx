@@ -19,9 +19,18 @@ export function JoinUs() {
     // Reset "Copied" message after 3 seconds
     setTimeout(() => setCopied(false), 3000);
 
-    // Open Gmail Compose directly in a new tab
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recruitmentEmail}&su=Postulación: [Tu Nombre] - [Puesto]`;
-    window.open(gmailUrl, '_blank');
+    const subject = "Postulación: [Tu Nombre] - [Puesto]";
+
+    // Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      window.location.href = `mailto:${recruitmentEmail}?subject=${encodeURIComponent(subject)}`;
+    } else {
+      // Open Gmail Compose directly in a new tab
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recruitmentEmail}&su=${encodeURIComponent(subject)}`;
+      window.open(gmailUrl, '_blank');
+    }
   };
 
   return (
