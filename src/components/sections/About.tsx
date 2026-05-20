@@ -39,7 +39,7 @@ export function About() {
         {/* New Centered Header Style */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
               CONOCENOS
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
@@ -69,7 +69,7 @@ export function About() {
           <div className="flex flex-col">
 
             <Reveal delay={0.3}>
-              <p className="text-navy/70 text-[17.5px] mb-8 leading-relaxed max-w-full font-medium">
+              <p className="text-navy/70 text-[1.09375rem] mb-8 leading-relaxed max-w-full font-medium">
                 ConsurWhite S.R.L. nació en Ingeniero White con el objetivo de conectar a las empresas del sector portuario y petroquímico de Bahía Blanca con talento local calificado. Somos una consultora de Recursos Humanos especializada en la búsqueda y evaluación de perfiles para industrias que exigen compromiso, responsabilidad y conocimiento del entorno operativo.
                 <br></br><br></br>
                 Nuestro diferencial es la cercanía con el territorio y el profundo entendimiento del sector, lo que nos permite ofrecer profesionales locales listos para integrarse de manera ágil y eficiente a cada equipo de trabajo.
@@ -86,8 +86,8 @@ export function About() {
                       <Shield className="w-4 h-4" />
                     </div>
                     <div className="pt-0.5">
-                      <h4 className="text-[17.5px] font-bold text-navy mb-1">Presencia local</h4>
-                      <p className="text-[15.5px] text-navy/70 leading-relaxed">Operamos en Ingeniero White, en el corazón del polo petroquímico más importante del país.</p>
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Presencia local</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Operamos en Ingeniero White, en el corazón del polo petroquímico más importante del país.</p>
                     </div>
                   </div>
                 </div>
@@ -101,8 +101,8 @@ export function About() {
                       <Activity className="w-4 h-4" />
                     </div>
                     <div className="pt-0.5">
-                      <h4 className="text-[17.5px] font-bold text-navy mb-1">Mano de obra con garantía</h4>
-                      <p className="text-[15.5px] text-navy/70 leading-relaxed">Solo presentamos candidatos evaluados, verificados y alineados con los requerimientos de tu empresa.</p>
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Mano de obra con garantía</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Solo presentamos candidatos evaluados, verificados y alineados con los requerimientos de tu empresa.</p>
                     </div>
                   </div>
                 </div>
@@ -116,8 +116,8 @@ export function About() {
                       <Clock className="w-4 h-4" />
                     </div>
                     <div className="pt-0.5">
-                      <h4 className="text-[17.5px] font-bold text-navy mb-1">Proceso ágil</h4>
-                      <p className="text-[15.5px] text-navy/70 leading-relaxed">Sin burocracia. Desde el primer contacto hasta la presentación de candidatos en el menor tiempo posible.</p>
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Proceso ágil</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Sin burocracia. Desde el primer contacto hasta la presentación de candidatos en el menor tiempo posible.</p>
                     </div>
                   </div>
                 </div>
@@ -139,7 +139,7 @@ export function About() {
                 <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={10} />
                 </div>
-                <div className="text-[11px] md:text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
                   Clientes<br/>satisfechos
                 </div>
               </div>
@@ -152,7 +152,7 @@ export function About() {
                 <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={18} />
                 </div>
-                <div className="text-[11px] md:text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
                   Proyectos<br/>completados
                 </div>
               </div>
@@ -165,7 +165,7 @@ export function About() {
                 <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={3000} />
                 </div>
-                <div className="text-[11px] md:text-[13px] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
                   Horas de<br/>acompañamiento
                 </div>
               </div>

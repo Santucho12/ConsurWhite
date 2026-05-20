@@ -110,7 +110,7 @@ export function Hero() {
         >
           <div className="max-w-3xl transform translate-y-8">
             <Reveal delay={0.1}>
-              <h1 className="text-[48px] md:text-[78px] font-bold text-navy leading-[1.05] mb-8 tracking-tight">
+              <h1 className="text-[3rem] md:text-[4.875rem] font-bold text-navy leading-[1.05] mb-8 tracking-tight">
                 Conectamos <br />
                 <span>capital humano</span> <br />
                 con empresas.

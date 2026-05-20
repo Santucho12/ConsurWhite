@@ -15,7 +15,7 @@ export function CareersCTA() {
               <Reveal>
                 <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
                   <div className="h-[px] w-6 bg-white/20" />
-                  <span className="text-white/40 font-bold uppercase tracking-[0.25em] text-[10px]">
+                  <span className="text-white/40 font-bold uppercase tracking-[0.25em] text-[0.625rem]">
                     Oportunidades Laborales
                   </span>
                   <div className="h-[px] w-6 bg-white/20 lg:hidden" />
@@ -27,7 +27,7 @@ export function CareersCTA() {
                 </h2>
               </Reveal>
               <Reveal delay={0.3}>
-                <p className="text-white/60 text-[14px] md:text-lg leading-relaxed max-w-2xl px-2 md:px-0">
+                <p className="text-white/60 text-[0.875rem] md:text-lg leading-relaxed max-w-2xl px-2 md:px-0">
                   Buscamos talentos para las industrias más importantes del sector. Cargá tu CV en nuestra base de datos y postulate para formar parte de nuestras próximas búsquedas laborales.
                 </p>
               </Reveal>
@@ -39,7 +39,7 @@ export function CareersCTA() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
-                    className="bg-white text-navy w-full md:w-auto px-6 py-4 md:px-12 md:py-5 rounded-full font-bold uppercase tracking-[0.15em] text-[12px] flex items-center justify-center gap-4 shadow-2xl hover:shadow-white/10 transition-all duration-300"
+                    className="bg-white text-navy w-full md:w-auto px-6 py-4 md:px-12 md:py-5 rounded-full font-bold uppercase tracking-[0.15em] text-[0.75rem] flex items-center justify-center gap-4 shadow-2xl hover:shadow-white/10 transition-all duration-300"
                   >
                     Postularme Ahora
                     <Send size={16} className="group-hover:translate-x-1 transition-transform" />

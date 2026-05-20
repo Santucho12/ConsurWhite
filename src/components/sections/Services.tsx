@@ -68,7 +68,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
         {/* Header: Badge and Icon */}
         <div className="flex justify-between items-center mb-6">
           <div className="py-1 px-3 bg-[#F4F6F8] rounded-full transition-colors duration-500 border border-navy/10 md:group-hover:border-navy/30 max-md:group-data-[active=true]:border-navy/30">
-            <span className="text-[11px] font-bold tracking-widest uppercase transition-colors duration-500 text-navy/60 md:group-hover:text-navy max-md:group-data-[active=true]:text-navy">
+            <span className="text-[0.6875rem] font-bold tracking-widest uppercase transition-colors duration-500 text-navy/60 md:group-hover:text-navy max-md:group-data-[active=true]:text-navy">
               {service.category}
             </span>
           </div>
@@ -83,7 +83,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
         </h3>
 
         {/* Description */}
-        <p className="text-navy/60 text-[15px] md:text-base leading-snug mb-6">
+        <p className="text-navy/60 text-[0.9375rem] md:text-base leading-snug mb-6">
           {service.desc}
         </p>
 
@@ -92,7 +92,7 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
           {service.items.map((item: string, i: number) => (
             <li key={i} className="flex items-start gap-3 group/item cursor-pointer">
               <div className="w-1.5 h-1.5 rounded-full bg-navy mt-2 transition-all duration-300 md:group-hover/item:bg-orange md:group-hover/item:scale-150 shrink-0 max-md:group-data-[active=true]/item:bg-orange" />
-              <span className="text-[14px] font-medium text-navy transition-colors duration-300 md:group-hover/item:text-orange">
+              <span className="text-[0.875rem] font-medium text-navy transition-colors duration-300 md:group-hover/item:text-orange">
                 {item}
               </span>
             </li>
@@ -113,7 +113,7 @@ export function Services() {
         {/* New Centered Header Style */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
               COMO TE AYUDAMOS
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">

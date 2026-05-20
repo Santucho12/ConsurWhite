@@ -48,7 +48,7 @@ export function FAQ() {
         {/* Header Section */}
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
               LO QUE NECESITAS SABER
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
@@ -75,7 +75,7 @@ export function FAQ() {
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     className="w-full flex items-center justify-between p-5 md:px-7 md:py-5 text-left transition-all duration-300 gap-4 group"
                   >
-                    <span className="text-[15px] md:text-[16px] font-bold tracking-tight transition-colors duration-300 text-navy">
+                    <span className="text-[0.9375rem] md:text-[1rem] font-bold tracking-tight transition-colors duration-300 text-navy">
                       {faq.question}
                     </span>
                     
@@ -95,7 +95,7 @@ export function FAQ() {
                         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       >
                         <div className="px-5 md:px-7 pb-6 pt-0">
-                          <p className="text-navy text-[14px] md:text-[15px] leading-relaxed">
+                          <p className="text-navy text-[0.875rem] md:text-[0.9375rem] leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>

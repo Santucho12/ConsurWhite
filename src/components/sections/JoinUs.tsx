@@ -30,7 +30,7 @@ export function JoinUs() {
         <Reveal delay={0.05}>
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-navy/40 hover:text-navy transition-colors font-bold uppercase tracking-widest text-[11px] group mb-4 md:mb-6"
+            className="inline-flex items-center gap-2 text-navy/40 hover:text-navy transition-colors font-bold uppercase tracking-widest text-[0.6875rem] group mb-4 md:mb-6"
           >
             <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
             Volver al Inicio
@@ -39,7 +39,7 @@ export function JoinUs() {
         <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-16">
           <div className="w-full lg:w-1/2 mt-4 md:mt-0">
             <Reveal delay={0.1}>
-              <span className="inline-block text-navy/40 font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-2 md:mb-0">
+              <span className="inline-block text-navy/40 font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-2 md:mb-0">
                 Trabajá con nosotros
               </span>
             </Reveal>
@@ -49,7 +49,7 @@ export function JoinUs() {
               </h2>
             </Reveal>
             <Reveal delay={0.3}>
-              <p className="text-navy/70 text-[16px] md:text-lg mb-6 md:mb-10 leading-relaxed max-w-xl">
+              <p className="text-navy/70 text-[1rem] md:text-lg mb-6 md:mb-10 leading-relaxed max-w-xl">
                 Buscamos talentos para las industrias más importantes del sector. Si deseas formar parte de nuestro equipo, sigue las instrucciones a continuación para enviarnos tu perfil.
               </p>
             </Reveal>
@@ -92,7 +92,7 @@ export function JoinUs() {
                     </div>
                     <div>
                       <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-1 leading-none">Postulación Directa</h3>
-                      <p className="text-white/40 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em]">Recursos Humanos</p>
+                      <p className="text-white/40 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-[0.2em]">Recursos Humanos</p>
                     </div>
                   </div>
                   
@@ -103,7 +103,7 @@ export function JoinUs() {
                       className="group bg-white/[0.03] rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/5 hover:border-white/10 transition-all duration-500 relative"
                     >
                       <div className="flex justify-between items-start mb-2">
-                        <div className="flex items-center gap-2 text-white/30 text-[9px] md:text-[10px] font-black uppercase tracking-widest">
+                        <div className="flex items-center gap-2 text-white/30 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-widest">
                           <Send size={12} />
                           Enviar a
                         </div>
@@ -113,22 +113,22 @@ export function JoinUs() {
                             setCopied(true);
                             setTimeout(() => setCopied(false), 3000);
                           }}
-                          className="text-[9px] md:text-[10px] font-bold text-white/20 hover:text-white/60 transition-colors uppercase tracking-widest flex items-center gap-1"
+                          className="text-[0.5625rem] md:text-[0.625rem] font-bold text-white/20 hover:text-white/60 transition-colors uppercase tracking-widest flex items-center gap-1"
                         >
                           {copied ? "¡Copiado!" : "Copiar"}
                         </button>
                       </div>
-                      <p className="text-[17px] md:text-2xl font-bold text-white tracking-tight break-all md:break-normal">{recruitmentEmail}</p>
+                      <p className="text-[1.0625rem] md:text-2xl font-bold text-white tracking-tight break-all md:break-normal">{recruitmentEmail}</p>
                     </motion.div>
 
                     {/* Subject Line */}
                     <div className="bg-white/[0.03] rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/5 hover:border-white/10 transition-all duration-500">
-                      <div className="flex items-center gap-2 text-white/30 text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-3">
+                      <div className="flex items-center gap-2 text-white/30 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-widest mb-3">
                         <FileText size={12} />
                         Asunto del Email
                       </div>
                       <div className="bg-black/20 rounded-xl p-4 md:p-4 border border-white/5">
-                        <p className="text-[13px] md:text-[15px] font-medium text-white/90 leading-relaxed italic">
+                        <p className="text-[0.8125rem] md:text-[0.9375rem] font-medium text-white/90 leading-relaxed italic">
                           "Postulación: <span className="text-white font-bold not-italic">[Tu Nombre]</span> — <span className="text-white font-bold not-italic">[Puesto]</span>"
                         </p>
                       </div>
@@ -136,11 +136,11 @@ export function JoinUs() {
 
                     {/* Requirements */}
                     <div className="bg-white/[0.03] rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/5">
-                      <div className="flex items-center gap-2 text-white/30 text-[9px] md:text-[10px] font-black uppercase tracking-widest mb-4">
+                      <div className="flex items-center gap-2 text-white/30 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-widest mb-4">
                         <ShieldCheck size={12} />
                         Requisitos
                       </div>
-                      <div className="flex items-center gap-3 md:gap-4 text-[13px] md:text-sm font-medium text-white/70">
+                      <div className="flex items-center gap-3 md:gap-4 text-[0.8125rem] md:text-sm font-medium text-white/70">
                         <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-white/40 shrink-0">
                           <FileText size={16} />
                         </div>
@@ -152,7 +152,7 @@ export function JoinUs() {
                   <div className="mt-8 md:mt-10 space-y-6">
                     <button 
                       onClick={handleApply}
-                      className={`w-full font-black py-5 md:py-6 rounded-2xl md:rounded-[1.5rem] transition-all duration-500 transform hover:-translate-y-1 uppercase tracking-[0.15em] md:tracking-[0.25em] text-[11px] md:text-[12px] flex items-center justify-center gap-3 md:gap-4 group/btn cursor-pointer ${
+                      className={`w-full font-black py-5 md:py-6 rounded-2xl md:rounded-[1.5rem] transition-all duration-500 transform hover:-translate-y-1 uppercase tracking-[0.15em] md:tracking-[0.25em] text-[0.6875rem] md:text-[0.75rem] flex items-center justify-center gap-3 md:gap-4 group/btn cursor-pointer ${
                         copied 
                           ? "bg-green-500 text-white shadow-[0_20px_40px_rgba(34,197,94,0.3)]" 
                           : "bg-white text-[#0A192F] shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:shadow-[0_25px_50px_rgba(255,255,255,0.15)]"
@@ -164,7 +164,7 @@ export function JoinUs() {
 
                     <div className="flex items-center justify-center gap-3 pt-4">
                       <div className="h-px w-8 bg-white/10" />
-                      <p className="text-white/20 text-[9px] uppercase tracking-[0.3em] font-black text-center">
+                      <p className="text-white/20 text-[0.5625rem] uppercase tracking-[0.3em] font-black text-center">
                         Proceso de Selección 2024
                       </p>
                       <div className="h-px w-8 bg-white/10" />

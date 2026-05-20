@@ -112,7 +112,7 @@ export function WorkWithCompanies() {
         {/* New Centered Header Style */}
         <div className="max-w-4xl mx-auto text-center mb-10">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
               LOS PASOS A SEGUIR JUNTOS
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
@@ -179,7 +179,7 @@ export function WorkWithCompanies() {
                     >
                       <div className={`flex items-center gap-2 mb-2 justify-start`}>
                         {isEven && <div className={`w-6 h-[2px] ${step.color === "navy" ? "bg-navy/10" : "bg-orange/20"}`} />}
-                        <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-navy/30">Paso {i + 1}</span>
+                        <span className="text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-navy/30">Paso {i + 1}</span>
                         {!isEven && <div className={`w-6 h-[2px] ${step.color === "navy" ? "bg-navy/10" : "bg-orange/20"}`} />}
                       </div>
                       <h3 className={`text-2xl md:text-3xl font-black mb-3 leading-tight transition-colors duration-500 ${stepColor}`}>
@@ -207,7 +207,7 @@ function CTABlock() {
     <div className="mt-6 flex items-center">
       <a
         href="/#contacto"
-        className="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold text-[12px] uppercase tracking-[0.15em] px-10 py-4 rounded-full transition-all duration-500 group hover:opacity-90 hover:shadow-xl shadow-lg"
+        className="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold text-[0.75rem] uppercase tracking-[0.15em] px-10 py-4 rounded-full transition-all duration-500 group hover:opacity-90 hover:shadow-xl shadow-lg"
       >
         Agendar reunión
         <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

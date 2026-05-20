@@ -100,7 +100,7 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="relative text-[12px] font-bold text-navy group py-1 transition-colors uppercase tracking-[0.14em] cursor-pointer"
+                  className="relative text-[0.75rem] font-bold text-navy group py-1 transition-colors uppercase tracking-[0.14em] cursor-pointer"
                 >
                   <span>{link.name}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-navy transition-all duration-500 ease-out group-hover:w-full" />
@@ -119,7 +119,7 @@ export function Navbar() {
                   href="#contacto"
                   onClick={(e) => handleNavClick(e, "#contacto")}
                   className={cn(
-                    "group inline-flex items-center justify-center bg-navy text-white rounded-full font-bold uppercase px-8 py-3 text-[12px] tracking-[0.15em] cursor-pointer",
+                    "group inline-flex items-center justify-center bg-navy text-white rounded-full font-bold uppercase px-8 py-3 text-[0.75rem] tracking-[0.15em] cursor-pointer",
                     isScrolled ? "shadow-md" : "shadow-[0_0_20px_rgba(26,58,82,0.2)]"
                   )}
                 >
@@ -160,22 +160,22 @@ export function Navbar() {
                 </a>
               ))}
               <div className="w-full border-t border-navy/10 pt-6 pb-2 mt-2 flex flex-col items-center gap-4">
-                <span className="text-[10px] font-bold text-navy/50 uppercase tracking-[0.2em]">Empresas</span>
+                <span className="text-[0.625rem] font-bold text-navy/50 uppercase tracking-[0.2em]">Empresas</span>
                 <a
                   href="#contacto"
                   onClick={(e) => handleNavClick(e, "#contacto")}
-                  className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] shadow-xl cursor-pointer hover:bg-navy/90 transition-colors"
+                  className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[0.8125rem] font-bold uppercase tracking-[0.2em] shadow-xl cursor-pointer hover:bg-navy/90 transition-colors"
                 >
                   Contacto
                 </a>
               </div>
 
               <div className="w-full border-t border-navy/10 pt-6 flex flex-col items-center gap-4">
-                <span className="text-[10px] font-bold text-navy/50 uppercase tracking-[0.2em]">Únete al equipo</span>
+                <span className="text-[0.625rem] font-bold text-navy/50 uppercase tracking-[0.2em]">Únete al equipo</span>
                 <Link
                   href="/postulate"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full text-center bg-transparent border border-navy/30 text-navy px-8 py-4 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] cursor-pointer hover:bg-navy/5 transition-colors"
+                  className="w-full text-center bg-transparent border border-navy/30 text-navy px-8 py-4 rounded-full text-[0.8125rem] font-bold uppercase tracking-[0.2em] cursor-pointer hover:bg-navy/5 transition-colors"
                 >
                   Postularme
                 </Link>

@@ -79,7 +79,7 @@ export function SelectionProcess() {
         {/* New Centered Header Style */}
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-16">
           <Reveal delay={0.2} width="100%">
-            <span className="block text-orange font-bold text-[10px] md:text-xs tracking-[0.2em] uppercase mb-0">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
               COMO ELEGIMOS EL CAPITAL HUMANO
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
@@ -122,10 +122,10 @@ export function SelectionProcess() {
                   ${active === i ? "opacity-100" : "opacity-40 hover:opacity-70"}
                 `}
               >
-                <span className={`font-black text-[12px] tracking-wider uppercase ${active === i ? "text-orange" : "text-navy/30"}`}>
+                <span className={`font-black text-[0.75rem] tracking-wider uppercase ${active === i ? "text-orange" : "text-navy/30"}`}>
                   {step.num}
                 </span>
-                <span className={`font-bold text-navy text-sm md:text-[17px] truncate ${active === i ? "text-navy" : ""}`}>
+                <span className={`font-bold text-navy text-sm md:text-[1.0625rem] truncate ${active === i ? "text-navy" : ""}`}>
                   {step.title}
                 </span>
 
@@ -160,11 +160,11 @@ export function SelectionProcess() {
               <div>
 
 
-                <h3 className="text-xl md:text-2xl lg:text-[28px] font-extrabold text-navy leading-[1.2] mb-4">
+                <h3 className="text-xl md:text-2xl lg:text-[1.75rem] font-extrabold text-navy leading-[1.2] mb-4">
                   {current.headline}
                 </h3>
 
-                <p className="text-navy/60 text-[15px] md:text-[17px] leading-relaxed max-w-[1800px]">
+                <p className="text-navy/60 text-[0.9375rem] md:text-[1.0625rem] leading-relaxed max-w-[1800px]">
                   {current.desc}
                 </p>
               </div>
@@ -176,7 +176,7 @@ export function SelectionProcess() {
                     <div className="w-4 h-4 rounded-full bg-orange/10 flex items-center justify-center shrink-0">
                       <div className="w-1 h-1 rounded-full bg-orange" />
                     </div>
-                    <span className="text-navy/70 text-[14px] md:text-[16px] font-medium">{b}</span>
+                    <span className="text-navy/70 text-[0.875rem] md:text-[1rem] font-medium">{b}</span>
                   </div>
                 ))}
               </div>
@@ -187,7 +187,7 @@ export function SelectionProcess() {
               {/* Big Stat Card */}
               <div className="bg-navy rounded-2xl p-5 md:p-6 flex-1 flex flex-col justify-end relative overflow-hidden">
                 {/* Decorative large text */}
-                <div className="absolute top-[2%] right-[2%] text-white/[0.04] font-black text-[40px] md:text-[60px] leading-none select-none pointer-events-none whitespace-nowrap uppercase">
+                <div className="absolute top-[2%] right-[2%] text-white/[0.04] font-black text-[2.5rem] md:text-[3.75rem] leading-none select-none pointer-events-none whitespace-nowrap uppercase">
                   {current.num}
                 </div>
 
@@ -195,17 +195,17 @@ export function SelectionProcess() {
 
                 <div>
                   <div className="text-4xl md:text-5xl font-black text-white mb-2">{current.stat}</div>
-                  <div className="text-white/60 text-[14px] md:text-[15px] font-medium leading-snug max-w-[1800px]">{current.statLabel}</div>
+                  <div className="text-white/60 text-[0.875rem] md:text-[0.9375rem] font-medium leading-snug max-w-[1800px]">{current.statLabel}</div>
                 </div>
               </div>
 
               {/* Step Navigation Card */}
               <div className="bg-white rounded-2xl p-4 border border-navy/5 shadow-sm flex items-center justify-between">
                 <div>
-                  <div className="text-navy/40 text-[10px] font-bold uppercase tracking-wider mb-0.5">
+                  <div className="text-navy/40 text-[0.625rem] font-bold uppercase tracking-wider mb-0.5">
                     Paso {active + 1} de {steps.length}
                   </div>
-                  <div className="text-navy font-bold text-[15px]">{current.title}</div>
+                  <div className="text-navy font-bold text-[0.9375rem]">{current.title}</div>
                 </div>
                 <div className="flex gap-2">
                   <button
