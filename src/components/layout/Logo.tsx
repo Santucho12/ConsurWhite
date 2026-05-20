@@ -19,7 +19,7 @@ export function Logo({ className, variant = "full" }: LogoProps) {
         height={180}
         priority
         className={cn(
-          "object-contain w-auto h-12 md:h-16 -ml-2"
+          "object-contain w-auto h-12 md:h-16 -ml-2 hidden md:block"
         )}
       />
       
