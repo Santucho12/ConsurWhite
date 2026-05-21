@@ -7,7 +7,7 @@ import { Mail, Briefcase, ShieldCheck, FileText, Send, ArrowLeft } from "lucide-
 import { Reveal } from "@/components/ui/Reveal";
 
 export function JoinUs() {
-  const recruitmentEmail = "info@consurwhite.com";
+  const recruitmentEmail = "administracion@consurwhite.com";
   const [copied, setCopied] = useState(false);
 
   const handleApply = (e: React.FormEvent) => {
@@ -54,7 +54,7 @@ export function JoinUs() {
             </Reveal>
             <Reveal delay={0.3}>
               <p className="text-navy/70 text-[1rem] md:text-lg mb-6 md:mb-10 leading-relaxed max-w-xl">
-                Buscamos talentos para las industrias más importantes del sector. Si deseas formar parte de nuestro equipo, sigue las instrucciones a continuación para enviarnos tu perfil.
+                Buscamos talentos para las industrias más importantes de Bahía Blanca y la región. Si deseas formar parte de nuestro equipo, sigue las instrucciones a continuación para enviarnos tu perfil.
               </p>
             </Reveal>
 

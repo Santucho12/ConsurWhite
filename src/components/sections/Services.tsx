@@ -11,7 +11,7 @@ const services = [
     num: "01",
     category: "SELECCIÓN",
     title: "Búsqueda y Selección de Personal",
-    desc: "Identificamos, evaluamos y presentamos los candidatos más adecuados para cada posición. Nos especializamos en perfiles para el sector portuario, petroquímico e industrial.",
+    desc: "Identificamos, evaluamos y presentamos los candidatos más adecuados para cada posición. Nos especializamos en perfiles industriales de la región: petroquímico, portuario, metalúrgico, agroindustrial, energético, logístico y de construcción.",
     items: [
       "Operarios calificados",
       "Técnicos HSE",

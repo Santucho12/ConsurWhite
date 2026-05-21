@@ -14,14 +14,19 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "CONSURWHITE S.R.L",
-  description: "Especialistas en Recursos Humanos para el sector portuario y petroquímico en Ingeniero White, Bahía Blanca. Profesionalismo, modernidad y experiencia premium.",
+  description: "Consultora de Recursos Humanos en Ingeniero White, Bahía Blanca. Conectamos empresas del sector industrial con mano de obra local calificada. Seriedad, responsabilidad y respaldo profesional.",
   keywords: ["RRHH", "Portuario", "Petroquímico", "Bahía Blanca", "Ingeniero White", "Consultoría", "Búsqueda de Talentos"],
   authors: [{ name: "ConsurWhite S.R.L." }],
   openGraph: {
     title: "CONSURWHITE",
-    description: "Conectamos Capital Humano con Grandes Industrias en el sector portuario.",
+    description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
     type: "website",
     locale: "es_AR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CONSURWHITE",
+    description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
   },
   icons: {
     icon: "/logo SOLO 512px 512px.svg",

@@ -70,9 +70,9 @@ export function About() {
 
             <Reveal delay={0.3}>
               <p className="text-navy/70 text-[1.09375rem] mb-8 leading-relaxed max-w-full font-medium">
-                ConsurWhite S.R.L. nació en Ingeniero White con el objetivo de conectar a las empresas del sector portuario y petroquímico de Bahía Blanca con talento local calificado. Somos una consultora de Recursos Humanos especializada en la búsqueda y evaluación de perfiles para industrias que exigen compromiso, responsabilidad y conocimiento del entorno operativo.
+                ConsurWhite S.R.L. nació en Ingeniero White con un objetivo claro: ser el puente entre las empresas del sector industrial de Bahía Blanca y la región y el talento local que está listo para trabajar. Somos una consultora de Recursos Humanos especializada en la búsqueda, evaluación y presentación de perfiles para industrias que exigen seriedad, responsabilidad y conocimiento del territorio: desde el polo petroquímico y el sector portuario hasta industrias metalúrgicas, agroindustriales, energéticas y logísticas.
                 <br></br><br></br>
-                Nuestro diferencial es la cercanía con el territorio y el profundo entendimiento del sector, lo que nos permite ofrecer profesionales locales listos para integrarse de manera ágil y eficiente a cada equipo de trabajo.
+                Nuestro diferencial no es solo técnico: es la cercanía. Conocemos la zona, conocemos las industrias y entendemos lo que cada empresa necesita. Eso nos permite ofrecer candidatos locales, evaluados y listos para integrarse de manera ágil y eficiente a cada equipo de trabajo.
               </p>
             </Reveal>
 
@@ -87,7 +87,7 @@ export function About() {
                     </div>
                     <div className="pt-0.5">
                       <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Presencia local</h4>
-                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Operamos en Ingeniero White, en el corazón del polo petroquímico más importante del país.</p>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Operamos desde Ingeniero White, en el corazón del polo industrial y petroquímico más importante del país, con alcance en toda Bahía Blanca y la región.</p>
                     </div>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ export function About() {
                   +<AnimatedCounter to={10} />
                 </div>
                 <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
-                  Clientes<br/>satisfechos
+                  Clientes<br />satisfechos
                 </div>
               </div>
 
@@ -153,7 +153,7 @@ export function About() {
                   +<AnimatedCounter to={18} />
                 </div>
                 <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
-                  Proyectos<br/>completados
+                  Proyectos<br />completados
                 </div>
               </div>
 
@@ -166,7 +166,7 @@ export function About() {
                   +<AnimatedCounter to={3000} />
                 </div>
                 <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
-                  Horas de<br/>acompañamiento
+                  Horas de<br />acompañamiento
                 </div>
               </div>
             </div>

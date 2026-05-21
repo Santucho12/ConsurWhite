@@ -28,7 +28,7 @@ export function CareersCTA() {
               </Reveal>
               <Reveal delay={0.3}>
                 <p className="text-white/60 text-[0.875rem] md:text-lg leading-relaxed max-w-2xl px-2 md:px-0">
-                  Buscamos talentos para las industrias más importantes del sector. Cargá tu CV en nuestra base de datos y postulate para formar parte de nuestras próximas búsquedas laborales.
+                  Buscamos talentos para las industrias más importantes de Bahía Blanca y la región. Cargá tu CV en nuestra base de datos y postulate para formar parte de nuestras próximas búsquedas laborales.
                 </p>
               </Reveal>
             </div>

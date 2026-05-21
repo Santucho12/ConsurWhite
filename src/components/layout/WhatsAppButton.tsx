@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 export function WhatsAppButton() {
-  const phoneNumber = "5492911234567"; // Reemplazar con el número real
+  const phoneNumber = "5492915336645"; // Reemplazar con el número real
   const defaultMessage = "Hola ConsurWhite, me gustaría obtener más información sobre sus servicios.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
 

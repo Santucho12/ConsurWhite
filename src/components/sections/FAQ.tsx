@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: "¿Solo trabajan con empresas del sector portuario o petroquímico?",
-    answer: "Nuestra especialidad es ese sector porque conocemos el territorio y los perfiles. Sin embargo, también podemos acompañar empresas de otros rubros industriales o comerciales en Bahía Blanca y la región."
+    answer: "No. Trabajamos con todo el sector industrial de Bahía Blanca y la región: petroquímico, portuario, metalúrgico, agroindustrial, energético, logístico y de construcción. Nuestra fortaleza es el conocimiento del territorio y de los perfiles que cada industria necesita."
   },
   {
     question: "¿Cuál es el costo del servicio?",

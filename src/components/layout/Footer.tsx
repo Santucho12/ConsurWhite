@@ -110,8 +110,8 @@ export function Footer() {
             <div className="space-y-4">
               {[
                 { icon: MapPin, label: "Ubicación", value: "Ingeniero White, Bahía Blanca" },
-                { icon: Phone, label: "Teléfono", value: "+54 291 1234567" },
-                { icon: Mail, label: "Email", value: "info@consurwhite.com" }
+                { icon: Phone, label: "Teléfono", value: "+54 9 291 533-6645" },
+                { icon: Mail, label: "Email", value: "administracion@consurwhite.com" }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 group text-left">
                   <div className="w-11 h-11 rounded-full bg-white border border-navy/5 flex items-center justify-center text-orange shrink-0 transition-transform duration-300 group-hover:scale-110 shadow-sm">

@@ -138,7 +138,7 @@ export function Hero() {
 
             <Reveal delay={0.3}>
               <h2 className="text-lg text-slate-600 font-medium max-w-xl mb-10 leading-relaxed">
-                En ConsurWhite conectamos empresas del sector portuario y petroquímico de Ingeniero White con la mano de obra local calificada que necesitan. Rápido, confiable y con respaldo profesional.
+                En ConsurWhite conectamos a las empresas del sector industrial de Bahía Blanca y la región con la mano de obra local calificada que necesitan. Desde el polo petroquímico de Ingeniero White hasta industrias metalúrgicas, agroindustriales y logísticas: rápido, confiable y con respaldo profesional.
               </h2>
             </Reveal>
 
