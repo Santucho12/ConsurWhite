@@ -55,7 +55,7 @@ export function About() {
             <Reveal delay={0.2} width="100%">
               <div className="relative rounded-[32px] overflow-hidden shadow-xl aspect-[4/3.3]">
                 <Image
-                  src="/hr_interview_premium_1778369464284.png"
+                  src="/foto segunda.png"
                   alt="Equipo ConsurWhite"
                   width={800}
                   height={600}

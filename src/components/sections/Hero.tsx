@@ -104,7 +104,7 @@ export function Hero() {
         {/* Background Image Container */}
         <div ref={imageRef} className="absolute top-0 left-0 z-0 h-[115%] w-full hidden md:block">
           <Image
-            src="/ChatGPT Image 10 may 2026, 17_09_45.png"
+            src="/foto principal (1).png"
             alt="ConsurWhite Portuario"
             fill
             priority
