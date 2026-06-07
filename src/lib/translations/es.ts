@@ -226,6 +226,11 @@ export const es = {
     copyright: "CONSURWHITE S.R.L.",
     locationBottom: "Ingeniero White, Argentina",
   },
+  whatsapp: {
+    tooltip: "¿Cómo podemos ayudarte?",
+    ariaLabel: "Contactar por WhatsApp",
+    defaultMessage: "Hola ConsurWhite, me gustaría obtener más información sobre sus servicios.",
+  },
   language: {
     switchTo: "English",
     label: "Idioma",

@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function WhatsAppButton() {
-  const phoneNumber = "5492915336645"; // Reemplazar con el número real
-  const defaultMessage = "Hola ConsurWhite, me gustaría obtener más información sobre sus servicios.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  const { t } = useLanguage();
+  const phoneNumber = "5492915336645";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(t.whatsapp.defaultMessage)}`;
 
   return (
     <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4">
@@ -17,7 +18,7 @@ export function WhatsAppButton() {
         className="bg-[#F4F6F8] px-4 py-2 rounded-xl shadow-2xl border border-navy/5 text-navy text-[0.8125rem] font-bold flex items-center gap-2 whitespace-nowrap mb-2 hidden md:flex"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-        ¿Cómo podemos ayudarte?
+        {t.whatsapp.tooltip}
       </motion.div>
 
       <motion.a
@@ -28,7 +29,7 @@ export function WhatsAppButton() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: "spring", stiffness: 260, damping: 20, delay: 5 }}
-        aria-label="Contactar por WhatsApp"
+        aria-label={t.whatsapp.ariaLabel}
       >
         {/* Gentle pulsing ring (titilar) */}
         <motion.div
