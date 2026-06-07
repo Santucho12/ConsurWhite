@@ -42,7 +42,7 @@ export function Contact() {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          access_key: "551a2057-79f8-487e-95c9-df2b8986c355",
+           access_key: "7e42bc16-b59a-4ad0-b09e-15891e57b37a",
           "Nombre del Contacto": data.nombre,
           "Empresa / Organización": data.empresa || "No especificada",
           "Email de Respuesta": data.email,

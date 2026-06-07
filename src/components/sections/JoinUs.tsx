@@ -9,7 +9,7 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export function JoinUs() {
   const { t } = useLanguage();
-  const recruitmentEmail = "administracion@consurwhite.com";
+  const recruitmentEmail = "rrhh@consurwhite.com";
   const [copied, setCopied] = useState(false);
 
   const handleApply = (e: React.FormEvent) => {
