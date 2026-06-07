@@ -3,20 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 import { FadeIn } from "@/components/ui/Reveal";
 import { useLenis } from "lenis/react";
 import { usePathname, useRouter } from "next/navigation";
-
-const navLinks = [
-  { name: "Inicio", href: "#inicio" },
-  { name: "Sobre nosotros", href: "#nosotros" },
-  { name: "Servicios", href: "#servicios" },
-  { name: "Proceso de Selección", href: "#proceso-seleccion" },
-  { name: "Cómo trabajamos", href: "#alianza" },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,6 +17,15 @@ export function Navbar() {
   const lenis = useLenis();
   const pathname = usePathname();
   const router = useRouter();
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { name: t.nav.home, href: "#inicio" },
+    { name: t.nav.about, href: "#nosotros" },
+    { name: t.nav.services, href: "#servicios" },
+    { name: t.nav.selectionProcess, href: "#proceso-seleccion" },
+    { name: t.nav.workWithUs, href: "#alianza" },
+  ];
 
   if (pathname === '/postulate') return null;
 
@@ -108,8 +110,37 @@ export function Navbar() {
               ))}
             </nav>
 
-            {/* Desktop Action Button */}
-            <div className="hidden md:block">
+            {/* Desktop Actions */}
+            <div className="hidden md:flex items-center gap-3">
+              <div className={cn(
+                "inline-flex items-center rounded-full border-2 p-0.5 transition-all duration-300",
+                isScrolled
+                  ? "border-navy/30 bg-white/40 backdrop-blur-md"
+                  : "border-white/60 bg-white"
+              )}>
+                <button
+                  onClick={() => setLanguage("es")}
+                  className={cn(
+                    "rounded-full px-3 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] transition-all duration-300",
+                    language === "es"
+                      ? "bg-navy text-white shadow-sm"
+                      : isScrolled ? "bg-transparent text-navy" : "bg-white text-navy"
+                  )}
+                >
+                  ES
+                </button>
+                <button
+                  onClick={() => setLanguage("en")}
+                  className={cn(
+                    "rounded-full px-3 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] transition-all duration-300",
+                    language === "en"
+                      ? "bg-navy text-white shadow-sm"
+                      : isScrolled ? "bg-transparent text-navy" : "bg-white text-navy"
+                  )}
+                >
+                  EN
+                </button>
+              </div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
@@ -123,7 +154,7 @@ export function Navbar() {
                     isScrolled ? "shadow-md" : "shadow-[0_0_20px_rgba(26,58,82,0.2)]"
                   )}
                 >
-                  Contacto
+                  {t.nav.contact}
                 </a>
               </motion.div>
             </div>
@@ -160,25 +191,34 @@ export function Navbar() {
                 </a>
               ))}
               <div className="w-full border-t border-navy/10 pt-6 pb-2 mt-2 flex flex-col items-center gap-4">
-                <span className="text-[0.625rem] font-bold text-navy/50 uppercase tracking-[0.2em]">Empresas</span>
+                <span className="text-[0.625rem] font-bold text-navy/50 uppercase tracking-[0.2em]">{t.nav.companies}</span>
                 <a
                   href="#contacto"
                   onClick={(e) => handleNavClick(e, "#contacto")}
                   className="w-full text-center bg-navy text-white px-8 py-4 rounded-full text-[0.8125rem] font-bold uppercase tracking-[0.2em] shadow-xl cursor-pointer hover:bg-navy/90 transition-colors"
                 >
-                  Contacto
+                  {t.nav.contact}
                 </a>
               </div>
 
               <div className="w-full border-t border-navy/10 pt-6 flex flex-col items-center gap-4">
-                <span className="text-[0.625rem] font-bold text-navy/50 uppercase tracking-[0.2em]">Únete al equipo</span>
+                <span className="text-[0.625rem] font-bold text-navy/50 uppercase tracking-[0.2em]">{t.nav.joinTeam}</span>
                 <Link
                   href="/postulate"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full text-center bg-transparent border border-navy/30 text-navy px-8 py-4 rounded-full text-[0.8125rem] font-bold uppercase tracking-[0.2em] cursor-pointer hover:bg-navy/5 transition-colors"
                 >
-                  Postularme
+                  {t.nav.apply}
                 </Link>
+              </div>
+
+              <div className="w-full border-t border-navy/10 pt-6 flex flex-col items-center gap-4">
+                <button
+                  onClick={() => setLanguage(language === "es" ? "en" : "es")}
+                  className="w-full text-center border border-navy/30 text-navy px-8 py-4 rounded-full text-[0.8125rem] font-bold uppercase tracking-[0.2em] cursor-pointer hover:bg-navy/5 transition-colors"
+                >
+                  {language === "es" ? "EN - English" : "ES - Español"}
+                </button>
               </div>
             </nav>
           </motion.div>

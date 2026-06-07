@@ -5,8 +5,10 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,7 +25,7 @@ export function Footer() {
               <Logo variant="footer" className="transition-transform duration-500 group-hover:scale-105" />
             </Link>
             <p className="text-navy/60 text-[0.9375rem] leading-relaxed max-w-sm mb-6 italic">
-              "Liderando la conexión entre el talento local y las potencias industriales de la región."
+              {t.footer.tagline}
             </p>
             <div className="flex gap-3 justify-center">
               {[
@@ -79,15 +81,15 @@ export function Footer() {
           <div className="hidden md:flex flex-col items-center text-center">
             <div className="w-full">
               <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[0.625rem] mb-6 flex justify-center items-center gap-2">
-                Navegación
+                {t.footer.navTitle}
               </h4>
               <ul className="space-y-4">
                 {[
-                  { name: "Inicio", href: "/#inicio" },
-                  { name: "Sobre Nosotros", href: "/#nosotros" },
-                  { name: "Servicios", href: "/#servicios" },
-                  { name: "Postulantes", href: "/postulate" },
-                  { name: "Contacto", href: "/#contacto" }
+                  { name: t.footer.navHome, href: "/#inicio" },
+                  { name: t.footer.navAbout, href: "/#nosotros" },
+                  { name: t.footer.navServices, href: "/#servicios" },
+                  { name: t.footer.navApplicants, href: "/postulate" },
+                  { name: t.footer.navContact, href: "/#contacto" }
                 ].map((item) => (
                   <li key={item.name}>
                     <Link 
@@ -105,13 +107,13 @@ export function Footer() {
           {/* Contact Info Column */}
           <div className="flex flex-col items-center text-center lg:items-center">
             <h4 className="text-navy font-black uppercase tracking-[0.2em] text-[0.625rem] mb-6 flex items-center justify-center gap-2">
-              Contacto Directo
+              {t.footer.contactTitle}
             </h4>
             <div className="space-y-4">
               {[
-                { icon: MapPin, label: "Ubicación", value: "Ingeniero White, Bahía Blanca" },
-                { icon: Phone, label: "Teléfono", value: "+54 9 291 533-6645" },
-                { icon: Mail, label: "Email", value: "administracion@consurwhite.com" }
+                { icon: MapPin, label: t.footer.location, value: t.footer.locationValue },
+                { icon: Phone, label: t.footer.phone, value: t.footer.phoneValue },
+                { icon: Mail, label: t.footer.email, value: t.footer.emailValue }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 group text-left">
                   <div className="w-11 h-11 rounded-full bg-white border border-navy/5 flex items-center justify-center text-orange shrink-0 transition-transform duration-300 group-hover:scale-110 shadow-sm">
@@ -135,11 +137,11 @@ export function Footer() {
         <div className="pt-6 border-t border-navy/5 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
           <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center">
             <p className="text-navy/30 text-[0.6875rem] font-medium tracking-wide">
-              © {currentYear} CONSURWHITE S.R.L.
+              © {currentYear} {t.footer.copyright}
             </p>
             <div className="hidden md:block h-3 w-px bg-navy/10" />
             <p className="text-navy/30 text-[0.6875rem] font-medium tracking-wide uppercase">
-              Ingeniero White, Argentina
+              {t.footer.locationBottom}
             </p>
           </div>
           

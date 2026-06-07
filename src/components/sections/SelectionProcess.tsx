@@ -4,59 +4,18 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ShieldCheck, ClipboardCheck, GraduationCap, Target, ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
 
-const steps = [
-  {
-    num: "Primer paso",
-    tag: "Búsqueda",
-    title: "Búsqueda Activa",
-    headline: "Buscamos a los mejores talentos directamente.",
-    desc: "Conocemos en profundidad el entramado industrial de Bahía Blanca, Ingeniero White y la región. No esperamos a que lleguen los currículums: salimos a buscar a las personas con experiencia comprobada, usando nuestra red de contactos en el sector.",
-    stat: "+500",
-    statLabel: "Personas en nuestra base",
-    icon: Target,
-    accent: "bg-orange",
-    bullets: ["Contactos en la industria", "Base de datos al día", "Fuerte presencia en Ingeniero White y Bahía Blanca"],
-  },
-  {
-    num: "Segundo paso",
-    tag: "Revisión",
-    title: "Revisión Técnica",
-    headline: "Comprobamos que cada persona sabe hacer bien su trabajo.",
-    desc: "Nuestro equipo revisa al detalle los permisos, certificados y la experiencia práctica de cada persona. Nos aseguramos de que el candidato realmente sepa hacer el trabajo antes de enviarlo a su empresa.",
-    stat: "100%",
-    statLabel: "Habilidades comprobadas",
-    icon: GraduationCap,
-    accent: "bg-navy",
-    bullets: ["Control de licencias y permisos", "Revisión de conocimientos", "Chequeo de experiencia previa"],
-  },
-  {
-    num: "Tercer paso",
-    tag: "Entrevista",
-    title: "Evaluación Psicológica",
-    headline: "En la industria, la seguridad y la responsabilidad son claves.",
-    desc: "Hacemos entrevistas enfocadas en el trabajo en planta: evaluamos cómo manejan la presión, el respeto por las normas de seguridad y el trabajo en equipo. Solo elegimos a personas muy seguras y responsables.",
-    stat: "0",
-    statLabel: "Problemas por mala selección",
-    icon: ShieldCheck,
-    accent: "bg-orange",
-    bullets: ["Entrevistas para industria", "Actitud hacia la seguridad", "Capacidad para trabajar bajo presión"],
-  },
-  {
-    num: "Paso final",
-    tag: "Presentación",
-    title: "Selección Final",
-    headline: "Solo le presentamos a los candidatos ideales para su equipo.",
-    desc: "Antes de enviar a una persona, armamos un resumen completo: revisamos su historia laboral, llamamos a sus empleos anteriores y nos aseguramos de que se adapte bien a la forma de trabajar de su empresa.",
-    stat: "48hs",
-    statLabel: "Tiempo promedio de respuesta",
-    icon: ClipboardCheck,
-    accent: "bg-navy",
-    bullets: ["Resumen completo del candidato", "Llamadas a empleos anteriores", "Buen ajuste con su empresa"],
-  },
-];
+const stepIcons = [Target, GraduationCap, ShieldCheck, ClipboardCheck] as const;
+const stepAccents = ["bg-orange", "bg-navy", "bg-orange", "bg-navy"] as const;
 
 export function SelectionProcess() {
+  const { t } = useLanguage();
+  const steps = t.selectionProcess.steps.map((step, i) => ({
+    ...step,
+    icon: stepIcons[i] ?? ShieldCheck,
+    accent: stepAccents[i] ?? "bg-navy",
+  }));
   const [active, setActive] = useState(0);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
@@ -80,10 +39,10 @@ export function SelectionProcess() {
         <div className="max-w-4xl mx-auto text-center mb-8 md:mb-16">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
-              COMO ELEGIMOS EL CAPITAL HUMANO
+              {t.selectionProcess.badge}
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Proceso de selección
+              {t.selectionProcess.title}
             </h2>
           </Reveal>
         </div>
@@ -203,7 +162,7 @@ export function SelectionProcess() {
               <div className="bg-white rounded-2xl p-4 border border-navy/5 shadow-sm flex items-center justify-between">
                 <div>
                   <div className="text-navy/40 text-[0.625rem] font-bold uppercase tracking-wider mb-0.5">
-                    Paso {active + 1} de {steps.length}
+                    {t.selectionProcess.paso} {active + 1} {t.selectionProcess.of} {steps.length}
                   </div>
                   <div className="text-navy font-bold text-[0.9375rem]">{current.title}</div>
                 </div>

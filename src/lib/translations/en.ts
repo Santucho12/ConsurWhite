@@ -1,0 +1,233 @@
+export const en = {
+  nav: {
+    home: "Home",
+    about: "About Us",
+    services: "Services",
+    selectionProcess: "Selection Process",
+    workWithUs: "How We Work",
+    contact: "Contact",
+    companies: "Companies",
+    joinTeam: "Join the Team",
+    apply: "Apply Now",
+  },
+  hero: {
+    title1: "We Connect",
+    title2: "human capital",
+    title3: "with companies.",
+    subtitle: "At ConsurWhite we connect companies in the industrial sector of Bahía Blanca and the region with the qualified local workforce they need. From the petrochemical hub of Ingeniero White to metallurgical, agribusiness and logistics industries: fast, reliable, and with professional backing.",
+    hireCta: "Hire Personnel",
+    learnCta: "About ConsurWhite",
+  },
+  about: {
+    badge: "ABOUT US",
+    title: "About Us",
+    p1: "ConsurWhite S.R.L. was born in Ingeniero White with a clear goal: to be the bridge between companies in the industrial sector of Bahía Blanca and the region and the local talent ready to work. We are a Human Resources consultancy specialized in the search, evaluation and presentation of profiles for industries that demand seriousness, responsibility and knowledge of the territory: from the petrochemical hub and port sector to metallurgical, agribusiness, energy and logistics industries.",
+    p2: "Our difference is not only technical: it's closeness. We know the area, we know the industries and we understand what each company needs. That allows us to offer local candidates, evaluated and ready to integrate quickly and efficiently into each work team.",
+    pillar1Title: "Local Presence",
+    pillar1Desc: "We operate from Ingeniero White, in the heart of the most important industrial and petrochemical hub in the country, with reach throughout Bahía Blanca and the region.",
+    pillar2Title: "Guaranteed Workforce",
+    pillar2Desc: "We only present evaluated, verified candidates aligned with your company's requirements.",
+    pillar3Title: "Agile Process",
+    pillar3Desc: "No bureaucracy. From first contact to candidate presentation in the shortest possible time.",
+    stat1Label: "Satisfied\nClients",
+    stat2Label: "Completed\nProjects",
+    stat3Label: "Hours of\nSupport",
+  },
+  services: {
+    badge: "HOW WE HELP",
+    title: "Our Services",
+    items: [
+      {
+        num: "01",
+        category: "SELECTION",
+        title: "Recruitment & Selection",
+        desc: "We identify, evaluate and present the most suitable candidates for each position. We specialize in industrial profiles in the region: petrochemical, port, metallurgical, agribusiness, energy, logistics and construction.",
+        items: [
+          "Skilled operators",
+          "HSE Technicians",
+          "Specialist Engineers",
+          "Administrative profiles"
+        ],
+      },
+      {
+        num: "02",
+        category: "PRE-SELECTION",
+        title: "Evaluation & Pre-selection",
+        desc: "We conduct thorough interviews and background checks to ensure each candidate meets technical and attitudinal requirements.",
+        items: [
+          "Competency-based interviews",
+          "Background verification",
+          "Psycho-occupational evaluations",
+          "Suitability reports"
+        ],
+      },
+      {
+        num: "03",
+        category: "CONSULTING",
+        title: "Human Capital Consulting",
+        desc: "We accompany organizations in the strategic design and definition of profiles, ensuring talent aligns with business objectives.",
+        items: [
+          "Structure design",
+          "Job descriptions",
+          "Compensation strategy",
+          "Organizational development"
+        ],
+      },
+    ],
+  },
+  selectionProcess: {
+    badge: "HOW WE SELECT HUMAN CAPITAL",
+    title: "Selection Process",
+    steps: [
+      {
+        num: "First step",
+        tag: "Search",
+        title: "Active Search",
+        headline: "We find the best talent directly.",
+        desc: "We have in-depth knowledge of the industrial fabric of Bahía Blanca, Ingeniero White and the region. We don't wait for resumes to arrive: we go out and find people with proven experience, using our network of contacts in the sector.",
+        stat: "+500",
+        statLabel: "People in our database",
+        bullets: ["Industry contacts", "Up-to-date database", "Strong presence in Ingeniero White and Bahía Blanca"],
+      },
+      {
+        num: "Second step",
+        tag: "Review",
+        title: "Technical Review",
+        headline: "We verify that every person knows how to do their job well.",
+        desc: "Our team reviews permits, certificates and practical experience in detail. We make sure the candidate really knows how to do the job before sending them to your company.",
+        stat: "100%",
+        statLabel: "Verified skills",
+        bullets: ["License and permit control", "Knowledge review", "Previous experience check"],
+      },
+      {
+        num: "Third step",
+        tag: "Interview",
+        title: "Psychological Evaluation",
+        headline: "In industry, safety and responsibility are key.",
+        desc: "We conduct interviews focused on plant work: we evaluate how they handle pressure, respect for safety rules and teamwork. We only select very safe and responsible people.",
+        stat: "0",
+        statLabel: "Issues from wrong selection",
+        bullets: ["Industry-focused interviews", "Safety attitude", "Ability to work under pressure"],
+      },
+      {
+        num: "Final step",
+        tag: "Presentation",
+        title: "Final Selection",
+        headline: "We only present the ideal candidates for your team.",
+        desc: "Before sending a person, we put together a complete summary: we review their work history, call their previous employers and make sure they fit well with your company's way of working.",
+        stat: "48hs",
+        statLabel: "Average response time",
+        bullets: ["Complete candidate summary", "Previous employer calls", "Good fit with your company"],
+      },
+    ],
+    paso: "Step",
+    of: "of",
+  },
+  workflow: {
+    badge: "STEPS TO FOLLOW TOGETHER",
+    title: "How We Work",
+    step: "Step",
+    steps: [
+      {
+        title: "Needs Analysis",
+        desc: "We visit your facilities to thoroughly understand the need, the plant culture and the technical requirements of the position.",
+      },
+      {
+        title: "Search Activation",
+        desc: "We launch our rigorous internal selection and filtering process to find the most suitable profiles.",
+      },
+      {
+        title: "Candidate Presentation",
+        desc: "We deliver a detailed executive report with the finalist profiles, ready for your evaluation.",
+      },
+      {
+        title: "Final Interviews",
+        desc: "We coordinate interviews between selected candidates and your company's technical or management team.",
+      },
+      {
+        title: "Candidate Selection",
+        desc: "You make the final decision. We advise you on the choice and facilitate all management to expedite the onboarding.",
+      },
+      {
+        title: "We Support You Throughout",
+        desc: "Our commitment doesn't end with the selection. We provide continuous follow-up to ensure the perfect adaptation of new talent to your team.",
+      },
+    ],
+    cta: "Schedule a Meeting",
+  },
+  faq: {
+    badge: "WHAT YOU NEED TO KNOW",
+    title: "Frequently Asked Questions",
+    items: [
+      {
+        question: "How long does the selection process take?",
+        answer: "It depends on the profile and urgency. Generally, within 5 to 10 business days we can present pre-selected candidates. For very specific or technical profiles, the timeframe may be extended. We always keep you informed of progress."
+      },
+      {
+        question: "Do you only work with port or petrochemical companies?",
+        answer: "No. We work with the entire industrial sector of Bahía Blanca and the region: petrochemical, port, metallurgical, agribusiness, energy, logistics and construction. Our strength is our knowledge of the territory and the profiles each industry needs."
+      },
+      {
+        question: "What is the cost of the service?",
+        answer: "The cost varies depending on the type of search, number of positions and profile complexity. Contact us and we will prepare a no-obligation proposal."
+      },
+      {
+        question: "What happens if the candidate doesn't work out?",
+        answer: "We work with a guarantee. If the hired candidate does not pass the agreed probation period, we conduct a new search at no additional cost. Details are established in the contract."
+      },
+      {
+        question: "Do you have a candidate database or do you search from scratch?",
+        answer: "We have a network of contacts in the sector and publish active job searches. Each selection process is customized: we don't send generic CVs, we evaluate and filter according to your company's requirements."
+      },
+      {
+        question: "How do I get in touch to start a search?",
+        answer: "You can write to us via WhatsApp, complete the form on this page, or send us an email. We will get back to you within 24 hours."
+      },
+    ],
+  },
+  contact: {
+    badge: "CONTACT US",
+    title: "Let's build your next great team.",
+    nameLabel: "Full Name",
+    namePlaceholder: "E.g. John Doe",
+    companyLabel: "Company",
+    companyPlaceholder: "Optional",
+    emailLabel: "Work Email",
+    emailPlaceholder: "john@company.com",
+    messageLabel: "Message",
+    messagePlaceholder: "Tell us about your need...",
+    submitText: "Request Consultation",
+    submittingText: "Processing...",
+    successText: "Request Sent",
+    disclaimer: "* By submitting this form, your inquiry will be sent to us via email and a ConsurWhite advisor will contact you shortly.",
+  },
+  careersCta: {
+    badge: "Job Opportunities",
+    title1: "Boost your career",
+    title2: "with ConsurWhite",
+    desc: "We are looking for talent for the most important industries in Bahía Blanca and the region. Upload your CV to our database and apply to be part of our upcoming job searches.",
+    cta: "Apply Now",
+  },
+  footer: {
+    tagline: "\"Leading the connection between local talent and the industrial powerhouses of the region.\"",
+    navTitle: "Navigation",
+    navHome: "Home",
+    navAbout: "About Us",
+    navServices: "Services",
+    navApplicants: "Applicants",
+    navContact: "Contact",
+    contactTitle: "Direct Contact",
+    location: "Location",
+    locationValue: "Ingeniero White, Bahía Blanca",
+    phone: "Phone",
+    phoneValue: "+54 9 291 533-6645",
+    email: "Email",
+    emailValue: "administracion@consurwhite.com",
+    copyright: "CONSURWHITE S.R.L.",
+    locationBottom: "Ingeniero White, Argentina",
+  },
+  language: {
+    switchTo: "Español",
+    label: "Language",
+  },
+} as const;

@@ -6,6 +6,7 @@ import * as z from "zod";
 import { Send, CheckCircle2 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const contactSchema = z.object({
   nombre: z.string().min(2, "El nombre es requerido"),
@@ -17,6 +18,7 @@ const contactSchema = z.object({
 type ContactFormValues = z.infer<typeof contactSchema>;
 
 export function Contact() {
+  const { t } = useLanguage();
   const {
     register,
     handleSubmit,
@@ -72,10 +74,10 @@ export function Contact() {
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
           <Reveal delay={0.1} width="100%">
             <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-3">
-              CONTACTANOS
+              {t.contact.badge}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Construyamos tu próximo gran equipo.
+              {t.contact.title}
             </h2>
           </Reveal>
         </div>
@@ -85,41 +87,41 @@ export function Contact() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <div className="space-y-2 text-left">
-                  <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">Nombre Completo</label>
+                  <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">{t.contact.nameLabel}</label>
                   <input
                     {...register("nombre")}
                     className="w-full bg-transparent border-b-2 border-navy/20 py-3 text-[1rem] font-medium text-navy focus:outline-none focus:border-navy transition-colors placeholder:text-navy/30"
-                    placeholder="Ej. Juan Pérez"
+                    placeholder={t.contact.namePlaceholder}
                   />
                   {errors.nombre && <p className="text-navy/60 text-xs mt-1 font-medium">{errors.nombre.message}</p>}
                 </div>
                 <div className="space-y-2 text-left">
-                  <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">Empresa</label>
+                  <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">{t.contact.companyLabel}</label>
                   <input
                     {...register("empresa")}
                     className="w-full bg-transparent border-b-2 border-navy/20 py-3 text-[1rem] font-medium text-navy focus:outline-none focus:border-navy transition-colors placeholder:text-navy/30"
-                    placeholder="Opcional"
+                    placeholder={t.contact.companyPlaceholder}
                   />
                 </div>
               </div>
 
               <div className="space-y-2 text-left">
-                <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">Email Corporativo</label>
+                <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">{t.contact.emailLabel}</label>
                 <input
                   {...register("email")}
                   className="w-full bg-transparent border-b-2 border-navy/20 py-3 text-[1rem] font-medium text-navy focus:outline-none focus:border-navy transition-colors placeholder:text-navy/30"
-                  placeholder="juan@empresa.com"
+                  placeholder={t.contact.emailPlaceholder}
                 />
                 {errors.email && <p className="text-navy/60 text-xs mt-1 font-medium">{errors.email.message}</p>}
               </div>
 
               <div className="space-y-2 text-left">
-                <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">Mensaje</label>
+                <label className="text-[0.6875rem] font-bold text-navy uppercase tracking-[0.2em]">{t.contact.messageLabel}</label>
                 <textarea
                   {...register("mensaje")}
                   rows={4}
                   className="w-full bg-transparent border-b-2 border-navy/20 py-3 text-[1rem] font-medium text-navy focus:outline-none focus:border-navy transition-colors placeholder:text-navy/30 resize-none"
-                  placeholder="Cuéntanos sobre tu necesidad..."
+                  placeholder={t.contact.messagePlaceholder}
                 />
                 {errors.mensaje && <p className="text-navy/60 text-xs mt-1 font-medium">{errors.mensaje.message}</p>}
               </div>
@@ -130,11 +132,11 @@ export function Contact() {
                   disabled={isSubmitting}
                   className="group inline-flex items-center gap-4 bg-navy text-white text-[0.8125rem] font-bold uppercase tracking-[0.15em] px-8 py-4 rounded-full hover:bg-navy/90 transition-colors disabled:opacity-70"
                 >
-                  {isSubmitting ? "Procesando..." : submitSuccess ? "Solicitud Enviada" : "Solicitar Asesoramiento"}
+                  {isSubmitting ? t.contact.submittingText : submitSuccess ? t.contact.successText : t.contact.submitText}
                   {submitSuccess ? <CheckCircle2 className="w-4 h-4 text-green-400" /> : <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
                 </button>
                 <p className="text-[0.8125rem] text-navy/50 mt-4 font-medium leading-relaxed max-w-md mx-auto">
-                  * Al enviar este formulario, tu consulta nos llegará por correo electrónico y un asesor de ConsurWhite se pondrá en contacto contigo a la brevedad.
+                  {t.contact.disclaimer}
                 </p>
               </div>
             </form>

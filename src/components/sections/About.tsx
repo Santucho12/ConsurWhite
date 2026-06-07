@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Activity, Clock, Shield, Globe, Award, Users, CheckCircle, Timer } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { useRef, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 import { animate, useInView } from "framer-motion";
 
 function AnimatedCounter({ to }: { to: number }) {
@@ -29,6 +30,7 @@ function AnimatedCounter({ to }: { to: number }) {
 }
 
 export function About() {
+  const { t } = useLanguage();
   return (
     <section
       id="nosotros"
@@ -40,10 +42,10 @@ export function About() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
-              CONOCENOS
+              {t.about.badge}
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Sobre nosotros
+              {t.about.title}
             </h2>
           </Reveal>
         </div>
@@ -70,9 +72,9 @@ export function About() {
 
             <Reveal delay={0.3}>
               <p className="text-navy/70 text-[1.09375rem] mb-8 leading-relaxed max-w-full font-medium">
-                ConsurWhite S.R.L. nació en Ingeniero White con un objetivo claro: ser el puente entre las empresas del sector industrial de Bahía Blanca y la región y el talento local que está listo para trabajar. Somos una consultora de Recursos Humanos especializada en la búsqueda, evaluación y presentación de perfiles para industrias que exigen seriedad, responsabilidad y conocimiento del territorio: desde el polo petroquímico y el sector portuario hasta industrias metalúrgicas, agroindustriales, energéticas y logísticas.
+                {t.about.p1}
                 <br></br><br></br>
-                Nuestro diferencial no es solo técnico: es la cercanía. Conocemos la zona, conocemos las industrias y entendemos lo que cada empresa necesita. Eso nos permite ofrecer candidatos locales, evaluados y listos para integrarse de manera ágil y eficiente a cada equipo de trabajo.
+                {t.about.p2}
               </p>
             </Reveal>
 
@@ -86,8 +88,8 @@ export function About() {
                       <Shield className="w-4 h-4" />
                     </div>
                     <div className="pt-0.5">
-                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Presencia local</h4>
-                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Operamos desde Ingeniero White, en el corazón del polo industrial y petroquímico más importante del país, con alcance en toda Bahía Blanca y la región.</p>
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">{t.about.pillar1Title}</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">{t.about.pillar1Desc}</p>
                     </div>
                   </div>
                 </div>
@@ -101,8 +103,8 @@ export function About() {
                       <Activity className="w-4 h-4" />
                     </div>
                     <div className="pt-0.5">
-                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Mano de obra con garantía</h4>
-                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Solo presentamos candidatos evaluados, verificados y alineados con los requerimientos de tu empresa.</p>
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">{t.about.pillar2Title}</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">{t.about.pillar2Desc}</p>
                     </div>
                   </div>
                 </div>
@@ -116,8 +118,8 @@ export function About() {
                       <Clock className="w-4 h-4" />
                     </div>
                     <div className="pt-0.5">
-                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">Proceso ágil</h4>
-                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">Sin burocracia. Desde el primer contacto hasta la presentación de candidatos en el menor tiempo posible.</p>
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">{t.about.pillar3Title}</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">{t.about.pillar3Desc}</p>
                     </div>
                   </div>
                 </div>
@@ -139,8 +141,8 @@ export function About() {
                 <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={10} />
                 </div>
-                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
-                  Clientes<br />satisfechos
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat1Label}
                 </div>
               </div>
 
@@ -152,8 +154,8 @@ export function About() {
                 <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={18} />
                 </div>
-                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
-                  Proyectos<br />completados
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat2Label}
                 </div>
               </div>
 
@@ -165,8 +167,8 @@ export function About() {
                 <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
                   +<AnimatedCounter to={3000} />
                 </div>
-                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed">
-                  Horas de<br />acompañamiento
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat3Label}
                 </div>
               </div>
             </div>

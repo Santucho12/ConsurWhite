@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 };
 
 import { IntroProvider } from "@/context/IntroContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -45,14 +46,16 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${outfit.variable} font-sans antialiased bg-cw-blue`} suppressHydrationWarning>
-        <IntroProvider>
-          <CinematicIntro>
-            <SmoothScroll>
-              {children}
-              <WhatsAppButton />
-            </SmoothScroll>
-          </CinematicIntro>
-        </IntroProvider>
+        <LanguageProvider>
+          <IntroProvider>
+            <CinematicIntro>
+              <SmoothScroll>
+                {children}
+                <WhatsAppButton />
+              </SmoothScroll>
+            </CinematicIntro>
+          </IntroProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

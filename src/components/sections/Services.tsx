@@ -5,48 +5,9 @@ import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Search, ClipboardCheck, Users, Handshake } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
 
-const services = [
-  {
-    num: "01",
-    category: "SELECCIÓN",
-    title: "Búsqueda y Selección de Personal",
-    desc: "Identificamos, evaluamos y presentamos los candidatos más adecuados para cada posición. Nos especializamos en perfiles industriales de la región: petroquímico, portuario, metalúrgico, agroindustrial, energético, logístico y de construcción.",
-    items: [
-      "Operarios calificados",
-      "Técnicos HSE",
-      "Ingenieros especialistas",
-      "Perfiles administrativos"
-    ],
-    icon: Search,
-  },
-  {
-    num: "02",
-    category: "PRESELECCIÓN",
-    title: "Evaluación y Preselección",
-    desc: "Realizamos entrevistas exhaustivas y verificación de antecedentes para asegurar que cada candidato cumpla con los requisitos técnicos y actitudinales.",
-    items: [
-      "Entrevistas por competencias",
-      "Verificación de antecedentes",
-      "Evaluaciones psicolaborales",
-      "Informes de adecuación"
-    ],
-    icon: ClipboardCheck,
-  },
-  {
-    num: "03",
-    category: "CONSULTORÍA",
-    title: "Consultoría en Capital Humano",
-    desc: "Acompañamos a las organizaciones en el diseño y definición estratégica de perfiles, asegurando que el talento se alinee con los objetivos del negocio.",
-    items: [
-      "Diseño de estructura",
-      "Descripción de puestos",
-      "Estrategia de compensaciones",
-      "Desarrollo organizacional"
-    ],
-    icon: Handshake,
-  }
-];
+const icons = [Search, ClipboardCheck, Handshake] as const;
 
 function ServiceCard({ service, index }: { service: any; index: number }) {
   const ref = useRef(null);
@@ -104,6 +65,13 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
 }
 
 export function Services() {
+  const { t } = useLanguage();
+
+  const services = t.services.items.map((item, i) => ({
+    ...item,
+    icon: icons[i] ?? Search,
+  }));
+
   return (
     <section id="servicios" className="py-16 md:py-24 bg-[#F4F6F8] relative overflow-hidden">
       {/* Technical Dot Pattern Background */}
@@ -114,10 +82,10 @@ export function Services() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
-              COMO TE AYUDAMOS
+              {t.services.badge}
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Nuestros servicios
+              {t.services.title}
             </h2>
           </Reveal>
         </div>

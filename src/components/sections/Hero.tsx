@@ -9,6 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/ui/Reveal";
 import { Send } from "lucide-react";
 import { useLenis } from "lenis/react";
+import { useLanguage } from "@/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,6 +21,7 @@ export function Hero() {
   const gradientRef = useRef<HTMLDivElement>(null);
 
   const lenis = useLenis();
+  const { t } = useLanguage();
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -130,15 +132,15 @@ export function Hero() {
           <div className="max-w-3xl transform translate-y-8">
             <Reveal delay={0.1}>
               <h1 className="text-[3rem] md:text-[4.875rem] font-bold text-navy leading-[1.05] mb-8 tracking-tight">
-                Conectamos <br />
-                <span>capital humano</span> <br />
-                con empresas.
+                {t.hero.title1} <br />
+                <span>{t.hero.title2}</span> <br />
+                {t.hero.title3}
               </h1>
             </Reveal>
 
             <Reveal delay={0.3}>
               <h2 className="text-lg text-slate-600 font-medium max-w-xl mb-10 leading-relaxed">
-                En ConsurWhite conectamos a las empresas del sector industrial de Bahía Blanca y la región con la mano de obra local calificada que necesitan. Desde el polo petroquímico de Ingeniero White hasta industrias metalúrgicas, agroindustriales y logísticas: rápido, confiable y con respaldo profesional.
+                {t.hero.subtitle}
               </h2>
             </Reveal>
 
@@ -151,7 +153,7 @@ export function Hero() {
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
                     className="group relative overflow-hidden bg-navy text-white px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] flex items-center justify-center gap-3 transition-shadow duration-500 shadow-xl shadow-navy/20 hover:shadow-2xl hover:shadow-navy/30 cursor-pointer w-full sm:w-auto"
                   >
-                    Contratar Personal
+                    {t.hero.hireCta}
                   </motion.button>
                 </Link>
               </Reveal>
@@ -163,7 +165,7 @@ export function Hero() {
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
                     className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-transparent md:bg-white/50 backdrop-blur-md border border-navy/20 md:border-navy/10 shadow-sm hover:shadow-md md:hover:bg-white/70 transition-all duration-500 cursor-pointer w-full sm:w-auto"
                   >
-                    Conocer ConsurWhite
+                    {t.hero.learnCta}
                   </motion.button>
                 </Link>
               </Reveal>

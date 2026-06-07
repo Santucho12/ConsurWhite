@@ -1,0 +1,233 @@
+export const es = {
+  nav: {
+    home: "Inicio",
+    about: "Sobre nosotros",
+    services: "Servicios",
+    selectionProcess: "Proceso de Selección",
+    workWithUs: "Cómo trabajamos",
+    contact: "Contacto",
+    companies: "Empresas",
+    joinTeam: "Únete al equipo",
+    apply: "Postularme",
+  },
+  hero: {
+    title1: "Conectamos",
+    title2: "capital humano",
+    title3: "con empresas.",
+    subtitle: "En ConsurWhite conectamos a las empresas del sector industrial de Bahía Blanca y la región con la mano de obra local calificada que necesitan. Desde el polo petroquímico de Ingeniero White hasta industrias metalúrgicas, agroindustriales y logísticas: rápido, confiable y con respaldo profesional.",
+    hireCta: "Contratar Personal",
+    learnCta: "Conocer ConsurWhite",
+  },
+  about: {
+    badge: "CONOCENOS",
+    title: "Sobre nosotros",
+    p1: "ConsurWhite S.R.L. nació en Ingeniero White con un objetivo claro: ser el puente entre las empresas del sector industrial de Bahía Blanca y la región y el talento local que está listo para trabajar. Somos una consultora de Recursos Humanos especializada en la búsqueda, evaluación y presentación de perfiles para industrias que exigen seriedad, responsabilidad y conocimiento del territorio: desde el polo petroquímico y el sector portuario hasta industrias metalúrgicas, agroindustriales, energéticas y logísticas.",
+    p2: "Nuestro diferencial no es solo técnico: es la cercanía. Conocemos la zona, conocemos las industrias y entendemos lo que cada empresa necesita. Eso nos permite ofrecer candidatos locales, evaluados y listos para integrarse de manera ágil y eficiente a cada equipo de trabajo.",
+    pillar1Title: "Presencia local",
+    pillar1Desc: "Operamos desde Ingeniero White, en el corazón del polo industrial y petroquímico más importante del país, con alcance en toda Bahía Blanca y la región.",
+    pillar2Title: "Mano de obra con garantía",
+    pillar2Desc: "Solo presentamos candidatos evaluados, verificados y alineados con los requerimientos de tu empresa.",
+    pillar3Title: "Proceso ágil",
+    pillar3Desc: "Sin burocracia. Desde el primer contacto hasta la presentación de candidatos en el menor tiempo posible.",
+    stat1Label: "Clientes\nsatisfechos",
+    stat2Label: "Proyectos\ncompletados",
+    stat3Label: "Horas de\nacompañamiento",
+  },
+  services: {
+    badge: "COMO TE AYUDAMOS",
+    title: "Nuestros servicios",
+    items: [
+      {
+        num: "01",
+        category: "SELECCIÓN",
+        title: "Búsqueda y Selección de Personal",
+        desc: "Identificamos, evaluamos y presentamos los candidatos más adecuados para cada posición. Nos especializamos en perfiles industriales de la región: petroquímico, portuario, metalúrgico, agroindustrial, energético, logístico y de construcción.",
+        items: [
+          "Operarios calificados",
+          "Técnicos HSE",
+          "Ingenieros especialistas",
+          "Perfiles administrativos"
+        ],
+      },
+      {
+        num: "02",
+        category: "PRESELECCIÓN",
+        title: "Evaluación y Preselección",
+        desc: "Realizamos entrevistas exhaustivas y verificación de antecedentes para asegurar que cada candidato cumpla con los requisitos técnicos y actitudinales.",
+        items: [
+          "Entrevistas por competencias",
+          "Verificación de antecedentes",
+          "Evaluaciones psicolaborales",
+          "Informes de adecuación"
+        ],
+      },
+      {
+        num: "03",
+        category: "CONSULTORÍA",
+        title: "Consultoría en Capital Humano",
+        desc: "Acompañamos a las organizaciones en el diseño y definición estratégica de perfiles, asegurando que el talento se alinee con los objetivos del negocio.",
+        items: [
+          "Diseño de estructura",
+          "Descripción de puestos",
+          "Estrategia de compensaciones",
+          "Desarrollo organizacional"
+        ],
+      },
+    ],
+  },
+  selectionProcess: {
+    badge: "COMO ELEGIMOS EL CAPITAL HUMANO",
+    title: "Proceso de selección",
+    steps: [
+      {
+        num: "Primer paso",
+        tag: "Búsqueda",
+        title: "Búsqueda Activa",
+        headline: "Buscamos a los mejores talentos directamente.",
+        desc: "Conocemos en profundidad el entramado industrial de Bahía Blanca, Ingeniero White y la región. No esperamos a que lleguen los currículums: salimos a buscar a las personas con experiencia comprobada, usando nuestra red de contactos en el sector.",
+        stat: "+500",
+        statLabel: "Personas en nuestra base",
+        bullets: ["Contactos en la industria", "Base de datos al día", "Fuerte presencia en Ingeniero White y Bahía Blanca"],
+      },
+      {
+        num: "Segundo paso",
+        tag: "Revisión",
+        title: "Revisión Técnica",
+        headline: "Comprobamos que cada persona sabe hacer bien su trabajo.",
+        desc: "Nuestro equipo revisa al detalle los permisos, certificados y la experiencia práctica de cada persona. Nos aseguramos de que el candidato realmente sepa hacer el trabajo antes de enviarlo a su empresa.",
+        stat: "100%",
+        statLabel: "Habilidades comprobadas",
+        bullets: ["Control de licencias y permisos", "Revisión de conocimientos", "Chequeo de experiencia previa"],
+      },
+      {
+        num: "Tercer paso",
+        tag: "Entrevista",
+        title: "Evaluación Psicológica",
+        headline: "En la industria, la seguridad y la responsabilidad son claves.",
+        desc: "Hacemos entrevistas enfocadas en el trabajo en planta: evaluamos cómo manejan la presión, el respeto por las normas de seguridad y el trabajo en equipo. Solo elegimos a personas muy seguras y responsables.",
+        stat: "0",
+        statLabel: "Problemas por mala selección",
+        bullets: ["Entrevistas para industria", "Actitud hacia la seguridad", "Capacidad para trabajar bajo presión"],
+      },
+      {
+        num: "Paso final",
+        tag: "Presentación",
+        title: "Selección Final",
+        headline: "Solo le presentamos a los candidatos ideales para su equipo.",
+        desc: "Antes de enviar a una persona, armamos un resumen completo: revisamos su historia laboral, llamamos a sus empleos anteriores y nos aseguramos de que se adapte bien a la forma de trabajar de su empresa.",
+        stat: "48hs",
+        statLabel: "Tiempo promedio de respuesta",
+        bullets: ["Resumen completo del candidato", "Llamadas a empleos anteriores", "Buen ajuste con su empresa"],
+      },
+    ],
+    paso: "Paso",
+    of: "de",
+  },
+  workflow: {
+    badge: "LOS PASOS A SEGUIR JUNTOS",
+    title: "Cómo trabajamos",
+    step: "Paso",
+    steps: [
+      {
+        title: "Análisis de Necesidades",
+        desc: "Visitamos sus instalaciones para entender a fondo la necesidad, la cultura de la planta y los requisitos técnicos del puesto.",
+      },
+      {
+        title: "Activación de Búsqueda",
+        desc: "Ponemos en marcha nuestro riguroso proceso interno de selección y filtrado para dar con los perfiles más idóneos.",
+      },
+      {
+        title: "Presentación de Candidatos",
+        desc: "Le entregamos un informe ejecutivo detallado con los perfiles finalistas, listos para su evaluación.",
+      },
+      {
+        title: "Entrevistas Finales",
+        desc: "Coordinamos las entrevistas entre los candidatos seleccionados y el equipo técnico o gerencial de su empresa.",
+      },
+      {
+        title: "Elección de candidatos",
+        desc: "Usted toma la decisión final. Lo asesoramos en la elección y facilitamos toda la gestión para agilizar el ingreso.",
+      },
+      {
+        title: "Te Acompañamos en el Proceso",
+        desc: "Nuestro compromiso no termina con la elección. Brindamos seguimiento continuo para asegurar la perfecta adaptación del nuevo talento a su equipo.",
+      },
+    ],
+    cta: "Agendar reunión",
+  },
+  faq: {
+    badge: "LO QUE NECESITAS SABER",
+    title: "Preguntas frecuentes",
+    items: [
+      {
+        question: "¿Cuánto tiempo tarda el proceso de selección?",
+        answer: "Depende del perfil y la urgencia. En general, en 5 a 10 días hábiles podemos presentarte candidatos preseleccionados. Para perfiles muy específicos o técnicos, el plazo puede extenderse. Siempre te mantenemos informado del avance."
+      },
+      {
+        question: "¿Solo trabajan con empresas del sector portuario o petroquímico?",
+        answer: "No. Trabajamos con todo el sector industrial de Bahía Blanca y la región: petroquímico, portuario, metalúrgico, agroindustrial, energético, logístico y de construcción. Nuestra fortaleza es el conocimiento del territorio y de los perfiles que cada industria necesita."
+      },
+      {
+        question: "¿Cuál es el costo del servicio?",
+        answer: "El costo varía según el tipo de búsqueda, la cantidad de posiciones y la complejidad del perfil. Contactanos y te preparamos una propuesta sin compromiso."
+      },
+      {
+        question: "¿Qué pasa si el candidato no funciona?",
+        answer: "Trabajamos con garantía. Si el candidato incorporado no supera el período de prueba acordado, realizamos una nueva búsqueda sin costo adicional. Los detalles se establecen en el contrato."
+      },
+      {
+        question: "¿Tienen base de datos de candidatos o buscan desde cero?",
+        answer: "Contamos con una red de contactos en el sector y publicamos búsquedas activas. Cada proceso de selección es a medida: no enviamos CVs genéricos, evaluamos y filtramos según los requisitos de tu empresa."
+      },
+      {
+        question: "¿Cómo me contacto para iniciar una búsqueda?",
+        answer: "Podés escribirnos por WhatsApp, completar el formulario en esta página, o enviarnos un correo. En menos de 24 horas nos ponemos en contacto."
+      },
+    ],
+  },
+  contact: {
+    badge: "CONTACTANOS",
+    title: "Construyamos tu próximo gran equipo.",
+    nameLabel: "Nombre Completo",
+    namePlaceholder: "Ej. Juan Pérez",
+    companyLabel: "Empresa",
+    companyPlaceholder: "Opcional",
+    emailLabel: "Email Corporativo",
+    emailPlaceholder: "juan@empresa.com",
+    messageLabel: "Mensaje",
+    messagePlaceholder: "Cuéntanos sobre tu necesidad...",
+    submitText: "Solicitar Asesoramiento",
+    submittingText: "Procesando...",
+    successText: "Solicitud Enviada",
+    disclaimer: "* Al enviar este formulario, tu consulta nos llegará por correo electrónico y un asesor de ConsurWhite se pondrá en contacto contigo a la brevedad.",
+  },
+  careersCta: {
+    badge: "Oportunidades Laborales",
+    title1: "Impulsá tu carrera",
+    title2: "con ConsurWhite",
+    desc: "Buscamos talentos para las industrias más importantes de Bahía Blanca y la región. Cargá tu CV en nuestra base de datos y postulate para formar parte de nuestras próximas búsquedas laborales.",
+    cta: "Postularme Ahora",
+  },
+  footer: {
+    tagline: "\"Liderando la conexión entre el talento local y las potencias industriales de la región.\"",
+    navTitle: "Navegación",
+    navHome: "Inicio",
+    navAbout: "Sobre Nosotros",
+    navServices: "Servicios",
+    navApplicants: "Postulantes",
+    navContact: "Contacto",
+    contactTitle: "Contacto Directo",
+    location: "Ubicación",
+    locationValue: "Ingeniero White, Bahía Blanca",
+    phone: "Teléfono",
+    phoneValue: "+54 9 291 533-6645",
+    email: "Email",
+    emailValue: "administracion@consurwhite.com",
+    copyright: "CONSURWHITE S.R.L.",
+    locationBottom: "Ingeniero White, Argentina",
+  },
+  language: {
+    switchTo: "English",
+    label: "Idioma",
+  },
+} as const;

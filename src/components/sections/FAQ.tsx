@@ -4,35 +4,13 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
 
-const faqs = [
-  {
-    question: "¿Cuánto tiempo tarda el proceso de selección?",
-    answer: "Depende del perfil y la urgencia. En general, en 5 a 10 días hábiles podemos presentarte candidatos preseleccionados. Para perfiles muy específicos o técnicos, el plazo puede extenderse. Siempre te mantenemos informado del avance."
-  },
-  {
-    question: "¿Solo trabajan con empresas del sector portuario o petroquímico?",
-    answer: "No. Trabajamos con todo el sector industrial de Bahía Blanca y la región: petroquímico, portuario, metalúrgico, agroindustrial, energético, logístico y de construcción. Nuestra fortaleza es el conocimiento del territorio y de los perfiles que cada industria necesita."
-  },
-  {
-    question: "¿Cuál es el costo del servicio?",
-    answer: "El costo varía según el tipo de búsqueda, la cantidad de posiciones y la complejidad del perfil. Contactanos y te preparamos una propuesta sin compromiso."
-  },
-  {
-    question: "¿Qué pasa si el candidato no funciona?",
-    answer: "Trabajamos con garantía. Si el candidato incorporado no supera el período de prueba acordado, realizamos una nueva búsqueda sin costo adicional. Los detalles se establecen en el contrato."
-  },
-  {
-    question: "¿Tienen base de datos de candidatos o buscan desde cero?",
-    answer: "Contamos con una red de contactos en el sector y publicamos búsquedas activas. Cada proceso de selección es a medida: no enviamos CVs genéricos, evaluamos y filtramos según los requisitos de tu empresa."
-  },
-  {
-    question: "¿Cómo me contacto para iniciar una búsqueda?",
-    answer: "Podés escribirnos por WhatsApp, completar el formulario en esta página, o enviarnos un correo. En menos de 24 horas nos ponemos en contacto."
-  }
-];
+
 
 export function FAQ() {
+  const { t } = useLanguage();
+  const faqs = t.faq.items;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -49,10 +27,10 @@ export function FAQ() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
-              LO QUE NECESITAS SABER
+              {t.faq.badge}
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Preguntas frecuentes
+              {t.faq.title}
             </h2>
           </Reveal>
         </div>

@@ -15,50 +15,16 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
 
-const steps = [
-  {
-    title: "Análisis de Necesidades",
-    desc: "Visitamos sus instalaciones para entender a fondo la necesidad, la cultura de la planta y los requisitos técnicos del puesto.",
-    icon: Briefcase,
-    color: "navy",
-    hex: "#001A33",
-  },
-  {
-    title: "Activación de Búsqueda",
-    desc: "Ponemos en marcha nuestro riguroso proceso interno de selección y filtrado para dar con los perfiles más idóneos.",
-    icon: Search,
-    color: "navy",
-    hex: "#001A33",
-  },
-  {
-    title: "Presentación de Candidatos",
-    desc: "Le entregamos un informe ejecutivo detallado con los perfiles finalistas, listos para su evaluación.",
-    icon: Users,
-    color: "navy",
-    hex: "#001A33",
-  },
-  {
-    title: "Entrevistas Finales",
-    desc: "Coordinamos las entrevistas entre los candidatos seleccionados y el equipo técnico o gerencial de su empresa.",
-    icon: FileCheck,
-    color: "orange",
-    hex: "#FF6B00",
-  },
-  {
-    title: "Elección de candidatos",
-    desc: "Usted toma la decisión final. Lo asesoramos en la elección y facilitamos toda la gestión para agilizar el ingreso.",
-    icon: CheckCircle2,
-    color: "orange",
-    hex: "#FF6B00",
-  },
-  {
-    title: "Te Acompañamos en el Proceso",
-    desc: "Nuestro compromiso no termina con la elección. Brindamos seguimiento continuo para asegurar la perfecta adaptación del nuevo talento a su equipo.",
-    icon: Handshake,
-    color: "orange",
-    hex: "#FF6B00",
-  },
+const workflowIcons = [Briefcase, Search, Users, FileCheck, CheckCircle2, Handshake] as const;
+const workflowColors: { color: "navy" | "orange"; hex: string }[] = [
+  { color: "navy", hex: "#001A33" },
+  { color: "navy", hex: "#001A33" },
+  { color: "navy", hex: "#001A33" },
+  { color: "orange", hex: "#FF6B00" },
+  { color: "orange", hex: "#FF6B00" },
+  { color: "orange", hex: "#FF6B00" },
 ];
 
 function TimelineNode({ index, scrollYProgress, isLast, hex }: { index: number, scrollYProgress: MotionValue<number>, isLast: boolean, hex: string }) {
@@ -98,11 +64,18 @@ function TimelineNode({ index, scrollYProgress, isLast, hex }: { index: number, 
 }
 
 export function WorkWithCompanies() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start center", "end center"]
   });
+
+  const steps = t.workflow.steps.map((step, i) => ({
+    ...step,
+    icon: workflowIcons[i] ?? Handshake,
+    ...workflowColors[i] ?? { color: "navy" as const, hex: "#001A33" },
+  }));
 
   return (
     <section id="alianza" className="pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden relative bg-[#F4F6F8]">
@@ -113,10 +86,10 @@ export function WorkWithCompanies() {
         <div className="max-w-4xl mx-auto text-center mb-10">
           <Reveal delay={0.2} width="100%">
             <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
-              LOS PASOS A SEGUIR JUNTOS
+              {t.workflow.badge}
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
-              Cómo trabajamos
+              {t.workflow.title}
             </h2>
           </Reveal>
         </div>
@@ -179,7 +152,7 @@ export function WorkWithCompanies() {
                     >
                       <div className={`flex items-center gap-2 mb-2 justify-start`}>
                         {isEven && <div className={`w-6 h-[2px] ${step.color === "navy" ? "bg-navy/10" : "bg-orange/20"}`} />}
-                        <span className="text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-navy/30">Paso {i + 1}</span>
+                        <span className="text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-navy/30">{t.workflow.step} {i + 1}</span>
                         {!isEven && <div className={`w-6 h-[2px] ${step.color === "navy" ? "bg-navy/10" : "bg-orange/20"}`} />}
                       </div>
                       <h3 className={`text-2xl md:text-3xl font-black mb-3 leading-tight transition-colors duration-500 ${stepColor}`}>
@@ -203,13 +176,14 @@ export function WorkWithCompanies() {
 }
 
 function CTABlock() {
+  const { t } = useLanguage();
   return (
     <div className="mt-6 flex items-center">
       <a
         href="/#contacto"
         className="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold text-[0.75rem] uppercase tracking-[0.15em] px-10 py-4 rounded-full transition-all duration-500 group hover:opacity-90 hover:shadow-xl shadow-lg"
       >
-        Agendar reunión
+        {t.workflow.cta}
         <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </a>
     </div>
