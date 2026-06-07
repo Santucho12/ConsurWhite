@@ -22,7 +22,7 @@ export function JoinUs() {
     const subject = `${t.joinUs.subjectText} [${t.joinUs.subjectName}] - [${t.joinUs.subjectRole}]`;
     const body = `Estimados,\n\nMe gustaría postularme para formar parte de su base de datos de profesionales. Adjunto mi CV para que puedan considerarlo en sus próximas búsquedas.\n\nQuedo a la espera de sus comentarios.\n\nSaludos cordiales.`;
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recruitmentEmail}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(gmailUrl, '_blank');
+    window.location.href = gmailUrl;
   };
 
   return (
