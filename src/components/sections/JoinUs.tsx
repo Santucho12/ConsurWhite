@@ -20,15 +20,8 @@ export function JoinUs() {
     setTimeout(() => setCopied(false), 3000);
 
     const subject = `${t.joinUs.subjectText} [${t.joinUs.subjectName}] - [${t.joinUs.subjectRole}]`;
-
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-      window.location.href = `mailto:${recruitmentEmail}?subject=${encodeURIComponent(subject)}`;
-    } else {
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recruitmentEmail}&su=${encodeURIComponent(subject)}`;
-      window.open(gmailUrl, '_blank');
-    }
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recruitmentEmail}&su=${encodeURIComponent(subject)}`;
+    window.open(gmailUrl, '_blank');
   };
 
   return (
