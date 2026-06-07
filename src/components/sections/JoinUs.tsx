@@ -5,29 +5,27 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Mail, Briefcase, ShieldCheck, FileText, Send, ArrowLeft } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function JoinUs() {
+  const { t } = useLanguage();
   const recruitmentEmail = "administracion@consurwhite.com";
   const [copied, setCopied] = useState(false);
 
   const handleApply = (e: React.FormEvent) => {
     e.preventDefault();
-    // Copy email to clipboard
     navigator.clipboard.writeText(recruitmentEmail);
     setCopied(true);
     
-    // Reset "Copied" message after 3 seconds
     setTimeout(() => setCopied(false), 3000);
 
-    const subject = "Postulación: [Tu Nombre] - [Puesto]";
+    const subject = `${t.joinUs.subjectText} [${t.joinUs.subjectName}] - [${t.joinUs.subjectRole}]`;
 
-    // Detect mobile device
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if (isMobile) {
       window.location.href = `mailto:${recruitmentEmail}?subject=${encodeURIComponent(subject)}`;
     } else {
-      // Open Gmail Compose directly in a new tab
       const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recruitmentEmail}&su=${encodeURIComponent(subject)}`;
       window.open(gmailUrl, '_blank');
     }
@@ -42,27 +40,27 @@ export function JoinUs() {
             className="inline-flex items-center gap-2 text-navy/40 hover:text-navy transition-colors font-bold uppercase tracking-widest text-[0.6875rem] group mb-4 md:mb-6"
           >
             <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
-            Volver al Inicio
+            {t.joinUs.backToHome}
           </Link>
         </Reveal>
         <div className="flex flex-col lg:flex-row items-start gap-8 md:gap-16">
           <div className="w-full lg:w-1/2 mt-4 md:mt-0">
             <Reveal delay={0.2}>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-navy mb-5 md:mb-8 italic leading-[1.1]">
-                Impulsá tu carrera <br /> con <span className="not-italic">ConsurWhite</span>
+                {t.joinUs.title1} <br /> <span className="not-italic">{t.joinUs.title2}</span>
               </h2>
             </Reveal>
             <Reveal delay={0.3}>
               <p className="text-navy/70 text-[1rem] md:text-lg mb-6 md:mb-10 leading-relaxed max-w-xl">
-                Buscamos talentos para las industrias más importantes de Bahía Blanca y la región. Si deseas formar parte de nuestro equipo, sigue las instrucciones a continuación para enviarnos tu perfil.
+                {t.joinUs.desc}
               </p>
             </Reveal>
 
             <div className="space-y-4 md:space-y-6">
               {[
-                { icon: <Briefcase size={20} />, text: "Conexión directa con las empresas líderes del polo industrial." },
-                { icon: <Send size={20} />, text: "Tu perfil en manos de quienes toman las decisiones." },
-                { icon: <ShieldCheck size={20} />, text: "Confidencialidad absoluta en todo tu proceso de postulación." }
+                { icon: <Briefcase size={20} />, text: t.joinUs.perks[0] },
+                { icon: <Send size={20} />, text: t.joinUs.perks[1] },
+                { icon: <ShieldCheck size={20} />, text: t.joinUs.perks[2] }
               ].map((item, index) => (
                 <Reveal key={index} delay={0.4 + index * 0.1}>
                   <div className="flex items-center gap-4 text-navy/60 group cursor-default">
@@ -95,8 +93,8 @@ export function JoinUs() {
                       <Mail className="text-white w-5 h-5 md:w-7 md:h-7" />
                     </div>
                     <div>
-                      <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-1 leading-none">Postulación Directa</h3>
-                      <p className="text-white/40 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-[0.2em]">Recursos Humanos</p>
+                      <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-1 leading-none">{t.joinUs.cardTitle}</h3>
+                      <p className="text-white/40 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-[0.2em]">{t.joinUs.cardSubtitle}</p>
                     </div>
                   </div>
                   
@@ -109,7 +107,7 @@ export function JoinUs() {
                       <div className="flex justify-between items-start mb-2">
                         <div className="flex items-center gap-2 text-white/30 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-widest">
                           <Send size={12} />
-                          Enviar a
+                          {t.joinUs.sendTo}
                         </div>
                         <button 
                           onClick={() => {
@@ -119,7 +117,7 @@ export function JoinUs() {
                           }}
                           className="text-[0.5625rem] md:text-[0.625rem] font-bold text-white/20 hover:text-white/60 transition-colors uppercase tracking-widest flex items-center gap-1"
                         >
-                          {copied ? "¡Copiado!" : "Copiar"}
+                          {copied ? t.joinUs.copiedBtn : t.joinUs.copyBtn}
                         </button>
                       </div>
                       <p className="text-[1.0625rem] md:text-2xl font-bold text-white tracking-tight break-all md:break-normal">{recruitmentEmail}</p>
@@ -129,11 +127,11 @@ export function JoinUs() {
                     <div className="bg-white/[0.03] rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/5 hover:border-white/10 transition-all duration-500">
                       <div className="flex items-center gap-2 text-white/30 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-widest mb-3">
                         <FileText size={12} />
-                        Asunto del Email
+                        {t.joinUs.subjectLabel}
                       </div>
                       <div className="bg-black/20 rounded-xl p-4 md:p-4 border border-white/5">
                         <p className="text-[0.8125rem] md:text-[0.9375rem] font-medium text-white/90 leading-relaxed italic">
-                          "Postulación: <span className="text-white font-bold not-italic">[Tu Nombre]</span> — <span className="text-white font-bold not-italic">[Puesto]</span>"
+                          &ldquo;{t.joinUs.subjectText} <span className="text-white font-bold not-italic">[{t.joinUs.subjectName}]</span> — <span className="text-white font-bold not-italic">[{t.joinUs.subjectRole}]</span>&rdquo;
                         </p>
                       </div>
                     </div>
@@ -142,13 +140,13 @@ export function JoinUs() {
                     <div className="bg-white/[0.03] rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/5">
                       <div className="flex items-center gap-2 text-white/30 text-[0.5625rem] md:text-[0.625rem] font-black uppercase tracking-widest mb-4">
                         <ShieldCheck size={12} />
-                        Requisitos
+                        {t.joinUs.requirementsLabel}
                       </div>
                       <div className="flex items-center gap-3 md:gap-4 text-[0.8125rem] md:text-sm font-medium text-white/70">
                         <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-white/40 shrink-0">
                           <FileText size={16} />
                         </div>
-                        <span className="leading-tight">CV Actualizado (PDF preferentemente)</span>
+                        <span className="leading-tight">{t.joinUs.requirementCV}</span>
                       </div>
                     </div>
                   </div>
@@ -162,14 +160,14 @@ export function JoinUs() {
                           : "bg-white text-[#0A192F] shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:shadow-[0_25px_50px_rgba(255,255,255,0.15)]"
                       }`}
                     >
-                      {copied ? "¡Email Copiado!" : "Redactar Email Ahora"}
+                      {copied ? t.joinUs.ctaCopied : t.joinUs.ctaNormal}
                       <Send size={16} className={`${copied ? "scale-110" : "group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"} transition-transform duration-500`} />
                     </button>
 
                     <div className="flex items-center justify-center gap-3 pt-4">
                       <div className="h-px w-8 bg-white/10" />
                       <p className="text-white/20 text-[0.5625rem] uppercase tracking-[0.3em] font-black text-center">
-                        Proceso de Selección 2024
+                        {t.joinUs.footer}
                       </p>
                       <div className="h-px w-8 bg-white/10" />
                     </div>
