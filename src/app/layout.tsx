@@ -18,10 +18,25 @@ export const metadata: Metadata = {
   keywords: ["RRHH", "Portuario", "Petroquímico", "Bahía Blanca", "Ingeniero White", "Consultoría", "Búsqueda de Talentos"],
   authors: [{ name: "ConsurWhite S.R.L." }],
   openGraph: {
-    title: "CONSURWHITE",
+    title: "CONSURWHITE S.R.L",
     description: "Conectamos Capital Humano con Grandes Industrias en el sector portuario.",
     type: "website",
     locale: "es_AR",
+    siteName: "CONSURWHITE S.R.L",
+    images: [
+      {
+        url: "/CONSURWHITE_logo_4k.png",
+        width: 1200,
+        height: 630,
+        alt: "CONSURWHITE S.R.L",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CONSURWHITE S.R.L",
+    description: "Conectamos Capital Humano con Grandes Industrias en el sector portuario.",
+    images: ["/CONSURWHITE_logo_4k.png"],
   },
   icons: {
     icon: "/logo SOLO 512px 512px.svg",
