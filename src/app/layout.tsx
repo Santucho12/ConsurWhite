@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   authors: [{ name: "ConsurWhite S.R.L." }],
   openGraph: {
     title: "CONSURWHITE S.R.L",
-    description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
+    description: "Conectamos capital humano con la industria en Ingeniero White y la región.",
     type: "website",
     locale: "es_AR",
     siteName: "CONSURWHITE S.R.L",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CONSURWHITE S.R.L",
-    description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
+    description: "Conectamos capital humano con la industria en Ingeniero White y la región.",
     images: ["/LOGO Y LETRAS (1).png"],
   },
   icons: {
