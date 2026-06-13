@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "CONSURWHITE S.R.L",
     images: [
       {
-        url: "/CONSURWHITE_logo_4k.png",
+        url: "/LOGO Y LETRAS (1).png",
         width: 1200,
         height: 630,
         alt: "CONSURWHITE S.R.L",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CONSURWHITE S.R.L",
     description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
-    images: ["/CONSURWHITE_logo_4k.png"],
+    images: ["/LOGO Y LETRAS (1).png"],
   },
   icons: {
     icon: "/logo SOLO 512px 512px.svg",
