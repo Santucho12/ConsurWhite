@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function WhatsAppButton() {
-  const phoneNumber = "5492911234567"; // Reemplazar con el número real
-  const defaultMessage = "Hola ConsurWhite, me gustaría obtener más información sobre sus servicios.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(defaultMessage)}`;
+  const { t } = useLanguage();
+  const phoneNumber = "5492915336645";
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(t.whatsapp.defaultMessage)}`;
 
   return (
     <div className="fixed bottom-8 right-8 z-[100] flex flex-col items-end gap-4">
@@ -13,11 +14,11 @@ export function WhatsAppButton() {
       <motion.div
         initial={{ opacity: 0, x: 20, scale: 0.8 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
-        transition={{ delay: 6, duration: 0.8, ease: "easeOut" }}
-        className="bg-white px-4 py-2 rounded-xl shadow-2xl border border-navy/5 text-navy text-[13px] font-bold flex items-center gap-2 whitespace-nowrap mb-2 hidden md:flex"
+        transition={{ delay: 5.5, duration: 0.8, ease: "easeOut" }}
+        className="bg-[#F4F6F8] px-4 py-2 rounded-xl shadow-2xl border border-navy/5 text-navy text-[0.8125rem] font-bold flex items-center gap-2 whitespace-nowrap mb-2 hidden md:flex"
       >
         <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
-        ¿Cómo podemos ayudarte?
+        {t.whatsapp.tooltip}
       </motion.div>
 
       <motion.a
@@ -27,8 +28,8 @@ export function WhatsAppButton() {
         className="group relative flex h-16 w-16 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.4)] transition-transform duration-300 hover:scale-105 active:scale-95 focus:outline-none"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 5.5 }}
-        aria-label="Contactar por WhatsApp"
+        transition={{ type: "spring", stiffness: 260, damping: 20, delay: 5 }}
+        aria-label={t.whatsapp.ariaLabel}
       >
         {/* Gentle pulsing ring (titilar) */}
         <motion.div

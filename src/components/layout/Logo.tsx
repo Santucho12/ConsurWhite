@@ -11,15 +11,15 @@ export function Logo({ className, variant = "full" }: LogoProps) {
   
   return (
     <div className={cn("relative group flex items-center gap-0", className)}>
-      {/* Icon SVG */}
+      {/* Icon SVG - High resolution source */}
       <Image
         src="/logo SOLO 512px 512px.svg"
         alt="ConsurWhite Icon"
-        width={100}
-        height={100}
+        width={180}
+        height={180}
         priority
         className={cn(
-          "object-contain w-auto h-16 md:h-20 -ml-3"
+          "object-contain w-auto h-12 md:h-16 -ml-2 hidden md:block"
         )}
       />
       
@@ -28,11 +28,12 @@ export function Logo({ className, variant = "full" }: LogoProps) {
         <Image
           src="/CONSURWHITE_logo_4k.png"
           alt="ConsurWhite Logo"
-          width={600}
-          height={180}
+          width={500}
+          height={150}
           priority
+          quality={100}
           className={cn(
-            "object-contain w-auto h-12 md:h-16 -ml-2"
+            "object-contain w-auto h-8 md:h-12 md:-ml-2 mix-blend-multiply"
           )}
         />
       )}

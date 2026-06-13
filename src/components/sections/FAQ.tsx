@@ -1,86 +1,92 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useLanguage } from "@/context/LanguageContext";
 
-const faqs = [
-  {
-    question: "¿En qué industrias se especializan?",
-    answer: "Nuestra especialización principal es el sector portuario y petroquímico de la región de Bahía Blanca e Ingeniero White, aunque brindamos servicios a empresas de logística e industria pesada en general."
-  },
-  {
-    question: "¿Qué tipos de perfiles suelen reclutar?",
-    answer: "Desde mandos medios y gerenciales hasta perfiles técnicos altamente especializados (ingenieros, técnicos químicos, operadores de planta, especialistas en seguridad industrial y medio ambiente)."
-  },
-  {
-    question: "¿Cómo garantizan la calidad de los candidatos?",
-    answer: "Implementamos un proceso de validación de 3 etapas: 1) Análisis técnico de antecedentes, 2) Entrevistas por competencias, 3) Evaluaciones psicotécnicas a medida de la cultura organizacional del cliente."
-  },
-  {
-    question: "¿Realizan búsquedas fuera de Bahía Blanca?",
-    answer: "Sí, aunque nuestra base es local, contamos con una red nacional para captar talentos que deseen radicarse en la zona o para posiciones remotas en áreas de soporte administrativo y técnico."
-  },
-  {
-    question: "¿Cuánto tiempo toma un proceso de búsqueda promedio?",
-    answer: "Un proceso estándar de selección demora entre 15 y 30 días, dependiendo de la especificidad técnica del perfil y la urgencia del requerimiento."
-  }
-];
+
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { t } = useLanguage();
+  const faqs = t.faq.items;
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      setOpenIndex(0);
+    }
+  }, []);
 
   return (
-    <section id="faq" className="py-32 -cw-white">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
-          <div className="lg:col-span-1">
-            <Reveal delay={0.1}>
-              <span className="-cw-orange font-bold uppercase tracking-widest text-xs mb-4 block">Preguntas Frecuentes</span>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <h2 className="text-4xl font-bold -cw-blue mb-6">Claridad y <br />Transparencia</h2>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <p className="-cw-blue/60 leading-relaxed">
-                Respondemos a las inquietudes más comunes de nuestros clientes y candidatos para establecer una base de confianza desde el primer contacto.
-              </p>
-            </Reveal>
-          </div>
+    <section id="faq" className="pt-12 pb-16 md:pt-20 md:pb-24 bg-[#F4F6F8] overflow-hidden">
+      <div className="container mx-auto px-6">
+        
+        {/* Header Section */}
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <Reveal delay={0.2} width="100%">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
+              {t.faq.badge}
+            </span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
+              {t.faq.title}
+            </h2>
+          </Reveal>
+        </div>
 
-          <div className="lg:col-span-2 space-y-4">
-            {faqs.map((faq, index) => (
+        {/* FAQ List Section */}
+        <div className="max-w-3xl mx-auto flex flex-col gap-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            
+            return (
               <Reveal key={index} delay={index * 0.1} width="100%">
-                <div className="overflow-hidden">
+                <div 
+                  className={`bg-white rounded-[20px] transition-all duration-400 border overflow-hidden ${
+                    isOpen 
+                      ? "border-navy/10 shadow-[0_8px_30px_rgb(0,0,0,0.06)]" 
+                      : "border-navy/5 shadow-sm hover:border-navy/15 hover:shadow-md"
+                  }`}
+                >
                   <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className={`w-full flex items-center justify-between p-8 text-left transition-all duration-300 rounded-[24px] ${
-                      openIndex === index ? "-cw-blue -cw-white shadow-xl" : "-cw-blue/5 -cw-blue hover:-cw-blue/10"
-                    }`}
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="w-full flex items-center justify-between p-5 md:px-7 md:py-5 text-left transition-all duration-300 gap-4 group"
                   >
-                    <span className="text-lg font-bold">{faq.question}</span>
-                    {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                    <span className="text-[0.9375rem] md:text-[1rem] font-bold tracking-tight transition-colors duration-300 text-navy">
+                      {faq.question}
+                    </span>
+                    
+                    <div className={`shrink-0 w-9 h-9 rounded-full border flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.87,0,0.13,1)] ${
+                      isOpen ? "rotate-180 bg-navy text-white border-navy shadow-md" : "bg-white text-navy border-navy/20 group-hover:bg-navy/5"
+                    }`}>
+                      <ChevronDown size={18} strokeWidth={2.5} />
+                    </div>
                   </button>
+
                   <AnimatePresence>
-                    {openIndex === index && (
+                    {isOpen && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       >
-                        <div className="p-8 -cw-blue/70 leading-relaxed -cw-white">
-                          {faq.answer}
+                        <div className="px-5 md:px-7 pb-6 pt-0">
+                          <p className="text-navy text-[0.875rem] md:text-[0.9375rem] leading-relaxed">
+                            {faq.answer}
+                          </p>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
               </Reveal>
-            ))}
-          </div>
+            );
+          })}
         </div>
+
+
       </div>
     </section>
   );

@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
 import { CinematicIntro } from "@/components/layout/CinematicIntro";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
-const montserrat = Montserrat({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   title: "CONSURWHITE S.R.L",
-  description: "Especialistas en Recursos Humanos para el sector portuario y petroquímico en Ingeniero White, Bahía Blanca. Profesionalismo, modernidad y experiencia premium.",
+  description: "Consultora de Recursos Humanos en Ingeniero White, Bahía Blanca. Conectamos empresas del sector industrial con mano de obra local calificada. Seriedad, responsabilidad y respaldo profesional.",
   keywords: ["RRHH", "Portuario", "Petroquímico", "Bahía Blanca", "Ingeniero White", "Consultoría", "Búsqueda de Talentos"],
   authors: [{ name: "ConsurWhite S.R.L." }],
   openGraph: {
     title: "CONSURWHITE S.R.L",
-    description: "Conectamos Capital Humano con Grandes Industrias en el sector portuario.",
+    description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
     type: "website",
     locale: "es_AR",
     siteName: "CONSURWHITE S.R.L",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "CONSURWHITE S.R.L",
-    description: "Conectamos Capital Humano con Grandes Industrias en el sector portuario.",
+    description: "Conectamos capital humano con la industria de Bahía Blanca y la región.",
     images: ["/CONSURWHITE_logo_4k.png"],
   },
   icons: {
@@ -46,6 +46,7 @@ export const metadata: Metadata = {
 };
 
 import { IntroProvider } from "@/context/IntroContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -54,17 +55,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth" suppressHydrationWarning>
-      <body className={`${montserrat.variable} font-sans antialiased bg-cw-blue`} suppressHydrationWarning>
-        <IntroProvider>
-          <CinematicIntro>
-            <SmoothScroll>
-              {children}
-              <WhatsAppButton />
-            </SmoothScroll>
-          </CinematicIntro>
-        </IntroProvider>
+      <body className={`${outfit.variable} font-sans antialiased bg-cw-blue`} suppressHydrationWarning>
+        <LanguageProvider>
+          <IntroProvider>
+            <CinematicIntro>
+              <SmoothScroll>
+                {children}
+                <WhatsAppButton />
+              </SmoothScroll>
+            </CinematicIntro>
+          </IntroProvider>
+        </LanguageProvider>
       </body>
     </html>
   );
 }
-

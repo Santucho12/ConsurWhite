@@ -7,6 +7,9 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Reveal } from "@/components/ui/Reveal";
+import { Send } from "lucide-react";
+import { useLenis } from "lenis/react";
+import { useLanguage } from "@/context/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +19,25 @@ export function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const gradientRef = useRef<HTMLDivElement>(null);
+
+  const lenis = useLenis();
+  const { t } = useLanguage();
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (lenis) {
+      lenis.scrollTo(href, {
+        duration: 2.5,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+    } else {
+      const el = document.querySelector(href);
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -75,14 +97,14 @@ export function Hero() {
     <section
       ref={containerRef}
       id="inicio"
-      className="relative h-[125vh] w-full bg-navy"
+      className="relative h-[125vh] w-full bg-white md:bg-navy"
     >
       {/* Sticky wrapper */}
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Background Image Container */}
-        <div ref={imageRef} className="absolute top-0 left-0 z-0 h-[115%] w-full">
+        <div ref={imageRef} className="absolute top-0 left-0 z-0 h-[115%] w-full hidden md:block">
           <Image
-            src="/ChatGPT Image 10 may 2026, 17_09_45.png"
+            src="/foto principal (1).png"
             alt="ConsurWhite Portuario"
             fill
             priority
@@ -91,15 +113,15 @@ export function Hero() {
         </div>
 
         {/* Base Gradient - Always visible to ensure text legibility */}
-        <div 
+        <div
           ref={gradientRef}
-          className="absolute inset-0 z-10 bg-gradient-to-r from-white/80 from-10% via-white/40 via-40% to-transparent to-70%" 
+          className="absolute inset-0 z-10 bg-white md:bg-transparent md:bg-gradient-to-r md:from-white/85 md:from-10% md:via-white/45 md:via-30% md:to-transparent md:to-55%"
         />
 
         {/* Darkening Overlay - Solid Black */}
         <div
           ref={overlayRef}
-          className="absolute inset-0 z-15 bg-black opacity-0 pointer-events-none"
+          className="absolute inset-0 z-[15] bg-black opacity-0 pointer-events-none hidden md:block"
         />
 
         {/* Content */}
@@ -109,41 +131,41 @@ export function Hero() {
         >
           <div className="max-w-3xl transform translate-y-8">
             <Reveal delay={0.1}>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-navy leading-[1.1] mb-8">
-                Conectamos <br />
-                <span className="text-orange">Capital Humano</span> <br />
-                con Empresas.
+              <h1 className="text-[3rem] md:text-[4.875rem] font-bold text-navy leading-[1.05] mb-8 tracking-tight">
+                {t.hero.title1} <br />
+                <span>{t.hero.title2}</span> <br />
+                {t.hero.title3}
               </h1>
             </Reveal>
 
             <Reveal delay={0.3}>
-              <h2 className="text-lg text-navy/70 font-medium max-w-xl mb-10 leading-relaxed">
-                En ConsurWhite conectamos empresas del sector portuario y petroquímico de Ingeniero White con la mano de obra local calificada que necesitan. Rápido, confiable y con respaldo profesional.
+              <h2 className="text-lg text-slate-600 font-medium max-w-xl mb-10 leading-relaxed">
+                {t.hero.subtitle}
               </h2>
             </Reveal>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
               <Reveal delay={0.5}>
-                <Link href="#alianza">
+                <Link href="#contacto" onClick={(e) => handleSmoothScroll(e, '#contacto')}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
                     className="group relative overflow-hidden bg-navy text-white px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] flex items-center justify-center gap-3 transition-shadow duration-500 shadow-xl shadow-navy/20 hover:shadow-2xl hover:shadow-navy/30 cursor-pointer w-full sm:w-auto"
                   >
-                    Contratar Personal
+                    {t.hero.hireCta}
                   </motion.button>
                 </Link>
               </Reveal>
               <Reveal delay={0.6}>
-                <Link href="#servicios">
+                <Link href="#nosotros" onClick={(e) => handleSmoothScroll(e, '#nosotros')}>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                    className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-md transition-shadow duration-500 cursor-pointer w-full sm:w-auto"
+                    className="px-8 py-4 rounded-full font-bold uppercase text-sm tracking-[0.1em] text-navy bg-transparent md:bg-white/50 backdrop-blur-md border border-navy/20 md:border-navy/10 shadow-sm hover:shadow-md md:hover:bg-white/70 transition-all duration-500 cursor-pointer w-full sm:w-auto"
                   >
-                    Conocer ConsurWhite
+                    {t.hero.learnCta}
                   </motion.button>
                 </Link>
               </Reveal>

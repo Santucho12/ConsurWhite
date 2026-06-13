@@ -1,26 +1,65 @@
 "use client";
 
 import Image from "next/image";
-import { Activity, Clock, Shield, Globe, Award } from "lucide-react";
+import { Activity, Clock, Shield, Globe, Award, Users, CheckCircle, Timer } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
+import { useRef, useEffect } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { animate, useInView } from "framer-motion";
+
+function AnimatedCounter({ to }: { to: number }) {
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView && nodeRef.current) {
+      const controls = animate(0, to, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(value) {
+          if (nodeRef.current) {
+            nodeRef.current.textContent = Math.round(value).toString();
+          }
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [to, isInView]);
+
+  return <span ref={nodeRef}>0</span>;
+}
 
 export function About() {
+  const { t } = useLanguage();
   return (
     <section
       id="nosotros"
-      className="relative z-30 pt-32 pb-16 bg-white overflow-hidden"
+      className="relative z-30 pt-20 md:pt-28 pb-16 md:pb-24 bg-[#F4F6F8] overflow-hidden"
     >
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <Reveal delay={0.2}>
-              <div className="relative rounded-[40px] overflow-hidden shadow-2xl -translate-y-5">
+
+        {/* New Centered Header Style */}
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <Reveal delay={0.2} width="100%">
+            <span className="block text-orange font-bold text-[0.625rem] md:text-xs tracking-[0.2em] uppercase mb-0">
+              {t.about.badge}
+            </span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight tracking-tight">
+              {t.about.title}
+            </h2>
+          </Reveal>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="relative -translate-y-[10px]">
+            <Reveal delay={0.2} width="100%">
+              <div className="relative rounded-[32px] overflow-hidden shadow-xl aspect-[4/3.3]">
                 <Image
-                  src="/hr_interview_premium_1778369464284.png"
+                  src="/foto segunda.png"
                   alt="Equipo ConsurWhite"
                   width={800}
-                  height={1000}
-                  className="object-cover hover:scale-105 transition-transform duration-1000 aspect-[4/3.8]"
+                  height={600}
+                  className="object-cover object-center hover:scale-105 transition-transform duration-1000 w-full h-full"
                 />
               </div>
             </Reveal>
@@ -30,60 +69,110 @@ export function About() {
           </div>
 
           <div className="flex flex-col">
-            <Reveal delay={0.2}>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-navy mb-8 leading-[1.05] tracking-tighter">
-                Sobre nosotros
-
-              </h2>
-            </Reveal>
 
             <Reveal delay={0.3}>
-              <p className="text-navy/70 text-[17px] mb-12 leading-relaxed max-w-xl font-medium">
-                ConsurWhite S.R.L. nació en Ingeniero White con el objetivo de conectar a las empresas del sector portuario y petroquímico de Bahía Blanca con talento local calificado. Somos una consultora de Recursos Humanos especializada en la búsqueda y evaluación de perfiles para industrias que exigen compromiso, responsabilidad y conocimiento del entorno operativo.
+              <p className="text-navy/70 text-[1.09375rem] mb-8 leading-relaxed max-w-full font-medium">
+                {t.about.p1}
                 <br></br><br></br>
-                Nuestro diferencial es la cercanía con el territorio y el profundo entendimiento del sector, lo que nos permite ofrecer profesionales locales listos para integrarse de manera ágil y eficiente a cada equipo de trabajo.
+                {t.about.p2}
               </p>
             </Reveal>
 
             {/* Feature list - The 3 Pillars */}
-            <div className="flex flex-col gap-3 mb-12">
+            <div className="flex flex-col gap-5 mb-8">
               <Reveal delay={0.4}>
-                <div className="flex items-center gap-4 p-3.5 bg-navy/[0.03] rounded-xl border border-navy/5 group hover:bg-white hover:shadow-xl transition-all duration-500">
-                  <div className="w-9 h-9 rounded-lg bg-navy/5 flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-white transition-colors">
-                    <Shield className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy text-sm mb-0.5">Presencia local</h4>
-                    <p className="text-[12px] text-navy/60 leading-tight">Operamos en Ingeniero White, en el corazón del polo petroquímico más importante del país.</p>
+                <div className="group relative pl-5 transition-all duration-500 hover:translate-x-2 cursor-default">
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-navy/10 rounded-full group-hover:bg-orange transition-colors duration-500"></div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-navy/5 shadow-sm flex items-center justify-center shrink-0 text-navy group-hover:text-orange group-hover:shadow-md group-hover:border-orange/20 transition-all duration-500">
+                      <Shield className="w-4 h-4" />
+                    </div>
+                    <div className="pt-0.5">
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">{t.about.pillar1Title}</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">{t.about.pillar1Desc}</p>
+                    </div>
                   </div>
                 </div>
               </Reveal>
 
               <Reveal delay={0.5}>
-                <div className="flex items-center gap-4 p-3.5 bg-navy/[0.03] rounded-xl border border-navy/5 group hover:bg-white hover:shadow-xl transition-all duration-500">
-                  <div className="w-9 h-9 rounded-lg bg-navy/5 flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-white transition-colors">
-                    <Activity className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy text-sm mb-0.5">Mano de obra con garantía</h4>
-                    <p className="text-[12px] text-navy/60 leading-tight">Solo presentamos candidatos evaluados, verificados y alineados con los requerimientos de tu empresa.</p>
+                <div className="group relative pl-5 transition-all duration-500 hover:translate-x-2 cursor-default">
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-navy/10 rounded-full group-hover:bg-orange transition-colors duration-500"></div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-navy/5 shadow-sm flex items-center justify-center shrink-0 text-navy group-hover:text-orange group-hover:shadow-md group-hover:border-orange/20 transition-all duration-500">
+                      <Activity className="w-4 h-4" />
+                    </div>
+                    <div className="pt-0.5">
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">{t.about.pillar2Title}</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">{t.about.pillar2Desc}</p>
+                    </div>
                   </div>
                 </div>
               </Reveal>
 
               <Reveal delay={0.6}>
-                <div className="flex items-center gap-4 p-3.5 bg-navy/[0.03] rounded-xl border border-navy/5 group hover:bg-white hover:shadow-xl transition-all duration-500">
-                  <div className="w-9 h-9 rounded-lg bg-navy/5 flex items-center justify-center shrink-0 group-hover:bg-navy group-hover:text-white transition-colors">
-                    <Clock className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-navy text-sm mb-0.5">Proceso ágil</h4>
-                    <p className="text-[12px] text-navy/60 leading-tight">Sin burocracia. Desde el primer contacto hasta la presentación de candidatos en el menor tiempo posible.</p>
+                <div className="group relative pl-5 transition-all duration-500 hover:translate-x-2 cursor-default">
+                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-navy/10 rounded-full group-hover:bg-orange transition-colors duration-500"></div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-navy/5 shadow-sm flex items-center justify-center shrink-0 text-navy group-hover:text-orange group-hover:shadow-md group-hover:border-orange/20 transition-all duration-500">
+                      <Clock className="w-4 h-4" />
+                    </div>
+                    <div className="pt-0.5">
+                      <h4 className="text-[1.09375rem] font-bold text-navy mb-1">{t.about.pillar3Title}</h4>
+                      <p className="text-[0.96875rem] text-navy/70 leading-relaxed">{t.about.pillar3Desc}</p>
+                    </div>
                   </div>
                 </div>
               </Reveal>
             </div>
+
           </div>
+        </div>
+
+        {/* Stats Badges Full Width */}
+        <div className="mt-2 sm:mt-4 w-full">
+          <Reveal delay={0.7} width="100%">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 border-t border-navy/10 pt-6">
+              {/* Badge 1 */}
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
+                  +<AnimatedCounter to={10} />
+                </div>
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat1Label}
+                </div>
+              </div>
+
+              {/* Badge 2 */}
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
+                  +<AnimatedCounter to={18} />
+                </div>
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat2Label}
+                </div>
+              </div>
+
+              {/* Badge 3 */}
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Timer className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
+                  +<AnimatedCounter to={3000} />
+                </div>
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat3Label}
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
