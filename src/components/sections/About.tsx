@@ -5,6 +5,33 @@ import { Activity, Clock, Shield, Globe, Award } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { useLanguage } from "@/context/LanguageContext";
 
+/* Sección de estadísticas oculta — descomentar junto con el bloque del final
+   (requiere: Users, CheckCircle, Timer de lucide-react; useRef, useEffect de
+   react; animate, useInView de framer-motion)
+
+function AnimatedCounter({ to }: { to: number }) {
+  const nodeRef = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "-50px" });
+
+  useEffect(() => {
+    if (isInView && nodeRef.current) {
+      const controls = animate(0, to, {
+        duration: 1.5,
+        ease: "easeOut",
+        onUpdate(value) {
+          if (nodeRef.current) {
+            nodeRef.current.textContent = Math.round(value).toString();
+          }
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [to, isInView]);
+
+  return <span ref={nodeRef}>0</span>;
+}
+*/
+
 export function About() {
   const { t } = useLanguage();
   return (
@@ -104,6 +131,50 @@ export function About() {
 
           </div>
         </div>
+
+        {/* Stats Badges Full Width — OCULTO
+        <div className="mt-2 sm:mt-4 w-full">
+          <Reveal delay={0.7} width="100%">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 border-t border-navy/10 pt-6">
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Users className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
+                  +<AnimatedCounter to={10} />
+                </div>
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat1Label}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
+                  +<AnimatedCounter to={18} />
+                </div>
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat2Label}
+                </div>
+              </div>
+
+              <div className="flex flex-col items-center p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-navy/5 shadow-md hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-orange/10 text-orange flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+                  <Timer className="w-6 h-6 md:w-7 md:h-7" />
+                </div>
+                <div className="text-4xl md:text-5xl font-black text-navy leading-none mb-1 md:mb-2 tracking-tight flex items-center">
+                  +<AnimatedCounter to={3000} />
+                </div>
+                <div className="text-[0.6875rem] md:text-[0.8125rem] font-bold text-navy/60 uppercase tracking-widest text-center leading-relaxed whitespace-pre-line">
+                  {t.about.stat3Label}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+        */}
       </div>
     </section>
   );
